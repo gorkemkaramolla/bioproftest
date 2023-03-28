@@ -24,7 +24,7 @@ const products = [
   },
 ];
 
-const Page = () => {
+const all = () => {
   return (
     <div>
       <Navbar />
@@ -37,4 +37,4 @@ const Page = () => {
     </div>
   );
 };
-export default Page;
+export default all;
