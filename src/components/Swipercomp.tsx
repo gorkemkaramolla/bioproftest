@@ -1,8 +1,8 @@
-"use client";
 import { imgData } from "../util/imgdata";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Link from "next/link";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination } from "swiper";
@@ -43,17 +43,17 @@ const Swipercomp = (props: Props) => {
       >
         {imgData.map((img, index) => (
           <SwiperSlide className="mb-16" key={index}>
-            <a
-              href="ürün"
+            <Link
+              href="product"
               className="flex flex-col items-center justify-center"
             >
               <img className="img-link" src={img.imgSrc} alt="Image 1" />
               <p>{img.description}</p>
-            </a>
+            </Link>
           </SwiperSlide>
         ))}
-        <div className="swiper-button-next "></div>
-        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next after:text-slate-500 after:text-sm "></div>
+        <div className="swiper-button-prev after:text-slate-500"></div>
       </Swiper>
     </>
   );

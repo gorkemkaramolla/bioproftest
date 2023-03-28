@@ -27,6 +27,8 @@
   justify-content: center;
 }
 .swiper-button-next {
+  font-size: 15px;
+
   position: absolute;
   top: 45%;
   transform: translateX(150%);
@@ -35,6 +37,7 @@
   transition: transform 0.15s ease-in-out;
 }
 .swiper-button-prev {
+  font-size: 15px;
   transition: all 0.15s ease-in-out;
   position: absolute;
   top: 45%;
@@ -48,17 +51,12 @@
 .mySwiper:hover .swiper-button-prev {
   transform: translateX(0%);
 }
-.swiper-button-next,
-.swiper-button-prev {
-  background-color: #fff;
-  color: #000;
-}
 
 .swiper-button-prev:after {
-  font-size: 25px;
+  font-size: 5px;
 }
 .swiper-button-next:after {
-  font-size: 25px;
+  font-size: 15px;
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {

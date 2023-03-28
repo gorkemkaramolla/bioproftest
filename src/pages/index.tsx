@@ -40,7 +40,7 @@ export default function Home() {
           <Banner />
         </div> */}
         </div>
-        <div className="container   w-screen p-5  ">
+        <div className="container   w-screen p-5    ">
           <Video />
         </div>
 

@@ -5,7 +5,7 @@ import { useSSR } from "@nextui-org/react";
 const links: { [key: string]: string } = {
   "Temizleyici - Arındırıcı ": "cleaner",
   "Yoğun Nem Desteği": "moisturizer",
-  "Onarıcı Bakım": "restorative-care",
+  "Onarıcı Bakım": "restorativecare",
   "Güneş Koruyucu": "sunscreen",
   "Tüm Ürünler": "all",
 };
