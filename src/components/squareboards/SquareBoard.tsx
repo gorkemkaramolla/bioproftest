@@ -9,7 +9,7 @@ const SquareBoard: React.FC<Props> = ({ imgSrc }) => {
     <a className="flex items-center justify-center" href="">
       <img
         style={{ width: "95%" }}
-        className="rounded-sm shadow-xl "
+        className="rounded-sm shadow-4xl "
         src={imgSrc}
         alt=""
       />
