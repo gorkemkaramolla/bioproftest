@@ -2,8 +2,9 @@ import { Inter } from "next/font/google";
 import styles from "../styles/Home.module.css";
 import { register } from "swiper/element/bundle";
 const inter = Inter({ subsets: ["latin"] });
-import { Swiper, SwiperSlide } from "swiper/react";
-import Navbar from "@/components/Navbar";
+
+import products from "@/util/products";
+
 // Import Swiper styles
 import "swiper/css";
 import Swipercomp from "@/components/Swipercomp";
@@ -13,6 +14,7 @@ import SquareBoard from "@/components/squareboards/SquareBoard";
 import Banner from "@/components/regular-banner/Banner";
 import Video from "@/components/Video/Video";
 import BrandSwiper from "@/components/BrandSwiper/BrandSwiper";
+import SocialMediaSquare from "../components/SocialMediaSquares/SocialMediaSquare";
 export default function Home() {
   return (
     <div>
@@ -61,6 +63,11 @@ export default function Home() {
         </div>
         <div className="container   w-screen p-5    ">
           <Video />
+        </div>
+        <div className="flex w-screen p-4  container">
+          {products.map((product) => (
+            <SocialMediaSquare key={product.id} imgSrc={product.url} />
+          ))}
         </div>
       </main>
     </div>
