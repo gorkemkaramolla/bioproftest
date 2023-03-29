@@ -52,8 +52,8 @@ const Swipercomp = (props: Props) => {
             </Link>
           </SwiperSlide>
         ))}
-        <div className="swiper-button-next after:text-slate-500 after:text-sm "></div>
-        <div className="swiper-button-prev after:text-slate-500"></div>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
       </Swiper>
     </>
   );
