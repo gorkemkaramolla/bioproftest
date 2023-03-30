@@ -1,5 +1,6 @@
-import { Navbar, Link } from "@nextui-org/react";
+import { Navbar } from "@nextui-org/react";
 import { FC, memo } from "react";
+import Link from "next/link";
 
 import Image from "next/image";
 import { useSSR } from "@nextui-org/react";
@@ -37,14 +38,14 @@ const NavigationBar: FC<{}> = () => {
         className="text-sm lg:text-base pl-8"
       >
         {Object.keys(links).map((link) => (
-          <Navbar.Link
+          <Link
             key={link}
             title={link}
             href={"/" + links[link]}
             className="text-xs lg:text-base "
           >
             {link}
-          </Navbar.Link>
+          </Link>
         ))}
       </Navbar.Content>
       <Navbar.Content
@@ -62,13 +63,7 @@ const NavigationBar: FC<{}> = () => {
       <Navbar.Collapse>
         {Object.entries(links).map(([key, value], index) => (
           <Navbar.CollapseItem key={index} activeColor="secondary">
-            <Link
-              color="inherit"
-              css={{
-                minWidth: "100%",
-              }}
-              href={"/" + value}
-            >
+            <Link color="inherit" href={`/${value}`}>
               {key}
             </Link>
           </Navbar.CollapseItem>
