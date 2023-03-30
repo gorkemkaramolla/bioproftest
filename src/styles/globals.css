@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: 'Futura PT Demi', 'HelveticaNeue-Light', 'Helvetica Neue Light',
-    'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-family: "Futura PT Demi", "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .mySwiper {
   min-height: 200px;
@@ -20,11 +20,11 @@
 .banner-pagination-bullet-active {
   background-color: red;
 }
-.img-link {
+/* .img-link {
   width: 250px;
   margin-bottom: 10px;
   height: 250px;
-}
+} */
 .swiper-slide {
   display: flex;
   align-items: center;

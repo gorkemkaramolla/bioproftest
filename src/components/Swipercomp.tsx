@@ -47,7 +47,7 @@ const Swipercomp = (props: Props) => {
               href={"/products/" + String(img.id)}
               className="flex flex-col items-center justify-center"
             >
-              <img className="img-link" src={img.url} alt="Image 1" />
+              <img className="w-36 sm:w-48" src={img.url} alt="Image 1" />
               <p>{img?.description}</p>
             </Link>
           </SwiperSlide>

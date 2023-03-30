@@ -2,8 +2,10 @@ import React from "react";
 import { useRouter } from "next/router";
 import products from "@/util/products";
 import { Button, Collapse, Text, Tooltip } from "@nextui-org/react";
+import Link from "next/link";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import useSSR from "@nextui-org/react";
+import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
 const Zoom = ({ src }: { src: string }) => {
   const [zoom, setZoom] = React.useState({
     backgroundImage: `url(${src})`,
@@ -57,13 +59,14 @@ const Car = () => {
   const product = products.filter((product) => product.id === Number(slug))[0];
 
   return (
-    <div className="my-16 container mx-auto ">
-      <div className="flex flex-col md:flex-row items-start [&>div]:mx-8 gap-12">
+    <div className="mt-2 container mx-auto ">
+      <BreadCrumb />
+      <div className="flex flex-col md:flex-row items-start [&>div]:mx-8 ">
         <div className="md:w-1/2">
           <Zoom src={product?.url} />
         </div>
         <div className="md:w-1/2 ">
-          <div className="md:w-3/4">
+          <div className="md:w-3/4 w-full mx-auto">
             <div className="text-xl font-bold justify-between flex items-center">
               {product?.caption}{" "}
               <div className="flex gap-2">
@@ -146,18 +149,32 @@ const Car = () => {
                 </Tooltip>
               </div>
             </div>
-            <hr className="mt-4 mb-6 border-black" />
-            <div className="">{product?.shortDescription}</div>
+            <hr className="mt-4 mb-6 border-gray-300" />
+            <p className="text-red-700 text-bold text-lg  ">
+              {product?.caption}
+            </p>
+            <p className="py-2">{product?.shortDescription}</p>
             <Button
               size={"lg"}
               color={"default"}
-              css={{ w: "stretch", mt: "$15", borderRadius: "0" }}
+              className="hover:bg-red-400"
+              css={{
+                w: "stretch",
+                mt: "$15",
+                backgroundColor: "$accents9",
+                borderRadius: "0",
+              }}
             >
               Satın Al
             </Button>
             <div className="flex text-sm mt-1">
               <div className="pr-2">Kategoriler:</div>
-              <div className="text-gray-500">{product?.category}</div>
+              <Link
+                href="/"
+                className="text-slate-400 hover:text-orange-500 transition-all	"
+              >
+                {product?.category}
+              </Link>
             </div>
           </div>
         </div>
