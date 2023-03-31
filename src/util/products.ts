@@ -44,14 +44,35 @@ const products = [
     caption: "Sinoz Yoğun Bronzlaştırıcı Jel",
     description: "Açıklama",
   },
+
   {
     id: 5,
-    name: "bronzluk-jeli",
-    category: categorires[2],
+    name: "Oil Yoğun Bakım Yağı",
+    category: categorires[3],
     shortDescription:
-      "Hafif renkli jel formülü ile uzun süren ideal ve parlak bronzluk. 200ml",
-    url: "https://www.sinoz.com.tr/wp-content/uploads/2022/02/bronzluk-jeli.jpg",
-    caption: "Sinoz Yoğun Bronzlaştırıcı Jel",
+      "Sinoz NO:16 Miracle Oil Yoğun Bakım Yağı ile mükemmel görünüm, benzersiz bir cilt bakımı deneyimine hazır mısınız?",
+    url: "https://www.sinoz.com.tr/wp-content/uploads/2022/04/9-sq.jpg",
+    caption: "Cilt Yenileyici, Besleyici, Onarıcı Bakım",
+    description: "Açıklama",
+  },
+  {
+    id: 6,
+    name: "Sinoz Vücut Peelingi",
+    category: categorires[3],
+    shortDescription:
+      "Sinoz Vücut Peelinginin mistik kokuları ile spa keyfinizi banyoya taşıyın! 250 ml",
+    url: "https://www.sinoz.com.tr/wp-content/uploads/2022/06/scrub-beyaz-kapak-web-1.jpg",
+    caption: "Ölü Deri ve Batıklara Karşı Arındırma Etkisi",
+    description: "Açıklama",
+  },
+  {
+    id: 7,
+    name: "Leke Kremi",
+    category: categorires[4],
+    shortDescription:
+      "Sinoz Vücut Peelinginin mistik kokuları ile spa keyfinizi banyoya taşıyın! 250 ml",
+    url: "https://www.sinoz.com.tr/wp-content/uploads/2022/10/blemish.jpg",
+    caption: "Ölü Deri ve Batıklara Karşı Arındırma Etkisi",
     description: "Açıklama",
   },
 ];

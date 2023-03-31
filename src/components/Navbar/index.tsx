@@ -14,7 +14,10 @@ const links: { [key: string]: string } = {
 };
 import categorires from "@/util/categories";
 import { firstCharacterUpper } from "@/util/utilfunctions";
+import { useRouter } from "next/router";
 const NavigationBar: FC<{}> = () => {
+  const router = useRouter();
+
   const { isBrowser } = useSSR();
 
   return isBrowser ? (
@@ -55,7 +58,9 @@ const NavigationBar: FC<{}> = () => {
                 key={i}
                 title={category}
                 href={"/products/"}
-                className="text-xs lg:text-base "
+                className={`text-xs lg:text-base ${
+                  router.asPath === `/products` ? "text-green-500" : ""
+                }`}
               >
                 {firstCharacterUpper(category)}
               </Link>
@@ -66,7 +71,11 @@ const NavigationBar: FC<{}> = () => {
                 key={i}
                 title={category}
                 href={"/products/category/" + category}
-                className="text-xs lg:text-base "
+                className={`text-xs lg:text-base ${
+                  router.asPath === `/products/category/${category}`
+                    ? "text-green-500"
+                    : ""
+                }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </Link>

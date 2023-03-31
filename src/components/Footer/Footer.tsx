@@ -24,14 +24,22 @@ const Footer = () => {
         </div>
         <div className="w-1/2 text-center md:text-start flex flex-col gap-1">
           <div className="text-2xl">İletişim</div>
-          <div>
+          <Link href="/" className="text-blue-400 hover:text-orange-400">
             Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 | Sarıyer/
             İstanbul
-          </div>
-          <div>Mail: bilgi@bioprof.com</div>
-          <div>Hakkımızda</div>
-          <div>İletişim</div>
-          <div>Blog</div>
+          </Link>
+          <Link className="text-blue-400 hover:text-orange-400" href="">
+            Mail: bilgi@bioprof.com
+          </Link>
+          <Link className="text-blue-400 hover:text-orange-400" href="/about">
+            Hakkımızda
+          </Link>
+          <Link className="text-blue-400 hover:text-orange-400" href="">
+            İletişim
+          </Link>
+          <Link className="text-blue-400 hover:text-orange-400" href="">
+            Blog
+          </Link>
         </div>
       </div>
       <div className="text-center text-sm mx-auto py-4 bg-black  text-gray-500 lg:ml-0 ">

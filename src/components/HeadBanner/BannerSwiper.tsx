@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import Link from "next/link";
 type Props = {};
-
+import { EffectFade } from "swiper";
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const BannerSwiper = (props: Props) => {
@@ -21,13 +21,13 @@ const BannerSwiper = (props: Props) => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 1000 }}
         slidesPerView={1}
         spaceBetween={0}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Navigation, Pagination]}
         className="mySwiper w-screen"
       >
         <SwiperSlide className="">

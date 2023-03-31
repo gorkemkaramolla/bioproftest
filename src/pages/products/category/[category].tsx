@@ -17,12 +17,10 @@ const Category = ({ productList }: CategoryProps) => {
     <div>
       <BreadCrumb categoryName={String(category)}></BreadCrumb>
 
-      <div className="w-full mx-auto">
-        <div className="w-full container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 ">
+      <div className="w-full mx-auto h-full">
+        <div className="w-full container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 justify-center items-center">
           {productList.length === 0 ? (
-            <div className="justify-center items-center flex">
-              <p>Bu kategoriye ait ürün bulunmamaktadır</p>
-            </div>
+            <p>Bu kategoriye ait ürün bulunmamaktadır</p>
           ) : (
             productList.map((product, i) => (
               <Product
