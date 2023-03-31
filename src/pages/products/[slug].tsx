@@ -1,10 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import products from '@/util/products';
-import { Button, Collapse, Text, Tooltip } from '@nextui-org/react';
+import { Collapse, Text, Tooltip } from '@nextui-org/react';
 import Link from 'next/link';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
-import useSSR from '@nextui-org/react';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
 const Zoom = ({ src }: { src: string }) => {
   const [zoom, setZoom] = React.useState({
@@ -75,12 +74,12 @@ const Car = () => {
     <div>
       <BreadCrumb categoryName={product?.category} />
 
-      <div className='mt-2 container mx-auto '>
+      <div className='mt-8 container mx-auto '>
         <div className='flex flex-col md:flex-row items-start [&>div]:mx-8 '>
           <div className='md:w-1/2'>
             <Zoom src={product?.url} />
           </div>
-          <div className='md:w-1/2 '>
+          <div className='md:w-1/2 mt-4 md:mt-0'>
             <div className='md:w-3/4 w-full mx-auto'>
               <div className='text-xl font-bold justify-between flex items-center'>
                 {product?.caption}{' '}
@@ -157,19 +156,7 @@ const Car = () => {
               <hr className='mt-4 mb-6 border-gray-300' />
 
               <p className='py-2 text-red-700'>{product?.shortDescription}</p>
-              <Button
-                size={'lg'}
-                color={'default'}
-                className='hover:bg-red-400'
-                css={{
-                  w: 'stretch',
-                  mt: '$15',
-                  backgroundColor: '$accents9',
-                  borderRadius: '0',
-                }}
-              >
-                Satın Al
-              </Button>
+              <ProductDrawer />
               <div className='flex text-sm mt-1'>
                 <div className='pr-2'>Kategoriler:</div>
                 <Link
