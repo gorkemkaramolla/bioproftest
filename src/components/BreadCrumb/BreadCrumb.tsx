@@ -11,7 +11,10 @@ type Props = {
 
 const BreadCrumb = (props: Props) => {
   return (
-    <nav className="flex py-4 mb-8 bg-green-50  " aria-label="Breadcrumb">
+    <nav
+      className="flex py-4  px-8  mb-8  bg-[rgb(252,252,252)]   border-b"
+      aria-label="Breadcrumb"
+    >
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
           <Link

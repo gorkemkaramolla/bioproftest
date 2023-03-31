@@ -1,18 +1,18 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import { Button } from '@nextui-org/react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { FiMenu } from 'react-icons/fi';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import { Button } from "@nextui-org/react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FiMenu } from "react-icons/fi";
 
-import categorires from '@/util/categories';
-import Link from 'next/link';
+import categorires from "@/util/categories";
+import Link from "next/link";
 
-import { useRouter } from 'next/router';
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+import { useRouter } from "next/router";
+type Anchor = "top" | "left" | "bottom" | "right";
 
 export default function TemporaryDrawer() {
   const router = useRouter();
@@ -27,9 +27,9 @@ export default function TemporaryDrawer() {
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -39,27 +39,31 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role='presentation'
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         {categorires.map((category, index) => (
           <ListItem
-            sx={{ textTransform: 'capitalize' }}
+            sx={{
+              textTransform: "capitalize",
+              paddingTop: "0.7rem",
+              paddinBottm: "0.7rem",
+            }}
             key={index}
             disablePadding
           >
             <ListItemButton>
-              {category !== 'tüm ürünler' ? (
+              {category !== "tüm ürünler" ? (
                 <Link
                   title={category}
-                  href={'/products/category/' + category}
+                  href={"/products/category/" + category}
                   className={`${
                     router.asPath === `/products/category/${category}`
-                      ? 'text-green-500'
-                      : ''
+                      ? "text-green-500 "
+                      : ""
                   }`}
                 >
                   <ListItemText primary={category} />
@@ -67,9 +71,9 @@ export default function TemporaryDrawer() {
               ) : (
                 <Link
                   title={category}
-                  href={'/products/'}
+                  href={"/products/"}
                   className={`${
-                    router.asPath === `/products` ? 'text-green-500' : ''
+                    router.asPath === `/products` ? "text-green-500 " : ""
                   }`}
                 >
                   <ListItemText primary={category} />
@@ -84,16 +88,16 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <React.Fragment key={'left'}>
-        <Button light auto onClick={toggleDrawer('left', true)}>
-          <FiMenu className='w-[1.4rem] h-[1.4rem]' />
+      <React.Fragment key={"left"}>
+        <Button light auto onClick={toggleDrawer("left", true)}>
+          <FiMenu className="w-[1.4rem] h-[1.4rem]" />
         </Button>
         <Drawer
-          anchor={'left'}
-          open={state['left']}
-          onClose={toggleDrawer('left', false)}
+          anchor={"left"}
+          open={state["left"]}
+          onClose={toggleDrawer("left", false)}
         >
-          {list('left')}
+          {list("left")}
         </Drawer>
       </React.Fragment>
     </div>
