@@ -21,7 +21,7 @@ export default function Home() {
       <main className={styles.main}>
         <div
           style={{ width: "90vw" }}
-          className=" container grid  row-span-1 grid-cols-12 "
+          className=" container grid mt-4 row-span-1 grid-cols-12 "
         >
           <div className="container col-span-12 ">
             <div

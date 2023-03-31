@@ -7,7 +7,7 @@ import products from "@/util/products";
 const all = () => {
   return (
     <div>
-      <BreadCrumb categoryName=""></BreadCrumb>
+      <BreadCrumb all={true}></BreadCrumb>
       <div className=" w-full  container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 ">
         {products.map((product, i) => (
           <Product
