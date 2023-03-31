@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: "Futura PT Demi", "HelveticaNeue-Light", "Helvetica Neue Light",
-    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Futura PT Demi', 'HelveticaNeue-Light', 'Helvetica Neue Light',
+    'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
 .mySwiper {
   min-height: 200px;
@@ -27,7 +27,7 @@
 .swiper-button-next {
   margin-left: 20px;
 
-  background-image: url("../../public/arrow-right.png");
+  background-image: url('../../public/arrow-right.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -40,7 +40,7 @@
 }
 .swiper-button-prev {
   font-size: 15px;
-  background-image: url("../../public/arrow-left.png");
+  background-image: url('../../public/arrow-left.png');
   z-index: 100;
   border-radius: 100%;
 
