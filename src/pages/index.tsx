@@ -18,20 +18,20 @@ import SocialMediaSquare from '../components/SocialMediaSquares/SocialMediaSquar
 import { useSpring, animated } from '@react-spring/web';
 
 export default function Home() {
-  const fromTop = { opacity: 0, y: -300 };
+  const fromTop = { opacity: 0, y: -500 };
   const toTop = { opacity: 1, y: 0 };
-  const fromBottom = { opacity: 0, y: 300 };
+  const fromBottom = { opacity: 0, y: 500 };
   const toBottom = { opacity: 1, y: 0 };
 
   const topProps = useSpring({
     from: fromTop,
     to: toTop,
-    config: { duration: 2000 },
+    config: { duration: 1000 },
   });
   const bottomProps = useSpring({
     from: fromBottom,
     to: toBottom,
-    config: { duration: 2000 },
+    config: { duration: 1000 },
   });
   return (
     <div>
