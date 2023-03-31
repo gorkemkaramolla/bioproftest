@@ -6,10 +6,10 @@ type Props = {
 
 const SquareBoard: React.FC<Props> = ({ imgSrc }) => {
   return (
-    <a className="flex items-center justify-center" href="">
+    <a className="flex items-end justify-center" href="">
       <img
         style={{ width: "95%" }}
-        className="rounded-sm shadow-4xl "
+        className="rounded-sm shadow-12xl "
         src={imgSrc}
         alt=""
       />

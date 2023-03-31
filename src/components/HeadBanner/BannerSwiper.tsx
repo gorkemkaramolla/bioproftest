@@ -28,7 +28,7 @@ const BannerSwiper = (props: Props) => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className="mySwiper w-screen"
+        className="mySwiper w-screen mb-4"
       >
         <SwiperSlide className="">
           <Link href="#">

@@ -21,7 +21,7 @@ const NavigationBar: FC<{}> = () => {
   const { isBrowser } = useSSR();
 
   return isBrowser ? (
-    <Navbar isBordered variant="sticky">
+    <Navbar isBordered variant="sticky" className="lg:bg-white bg-inherit">
       <Navbar.Toggle showIn="xs" />
       <Link href="/">
         <Navbar.Brand css={{ jc: "center" }}>
@@ -95,13 +95,36 @@ const NavigationBar: FC<{}> = () => {
         </Navbar.Item>
       </Navbar.Content>
       <Navbar.Collapse>
-        {Object.entries(links).map(([key, value], index) => (
-          <Navbar.CollapseItem key={index} activeColor="secondary">
-            <Link color="inherit" href={`/${value}`}>
-              {key}
-            </Link>
-          </Navbar.CollapseItem>
-        ))}
+        {categorires.map((category, i) => {
+          if (category === "tüm ürünler") {
+            return (
+              <Link
+                key={i}
+                title={category}
+                href={"/products/"}
+                className={`text-xs lg:text-base ${
+                  router.asPath === `/products` ? "text-green-500" : ""
+                }`}
+              >
+                {firstCharacterUpper(category)}
+              </Link>
+            );
+          } else
+            return (
+              <Link
+                key={i}
+                title={category}
+                href={"/products/category/" + category}
+                className={`text-xs lg:text-base ${
+                  router.asPath === `/products/category/${category}`
+                    ? "text-green-500"
+                    : ""
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </Link>
+            );
+        })}
       </Navbar.Collapse>
     </Navbar>
   ) : null;
