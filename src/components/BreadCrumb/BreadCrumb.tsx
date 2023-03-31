@@ -3,11 +3,12 @@ import Link from "next/link";
 import { firstCharacterUpper } from "@/util/utilfunctions";
 type Props = {
   categoryName: string;
+  productName?: string;
 };
 
 const BreadCrumb = (props: Props) => {
   return (
-    <nav className="flex my-8" aria-label="Breadcrumb">
+    <nav className="flex py-2 mb-2 bg-green-50 sticky" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
           <Link
@@ -26,29 +27,56 @@ const BreadCrumb = (props: Props) => {
             Home
           </Link>
         </li>
-        <li>
-          <div className="flex items-center">
-            <svg
-              aria-hidden="true"
-              className="w-6 h-6 text-gray-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-            <Link
-              href="/products"
-              className="ml-1 text-sm font-medium text-gray-700 "
-            >
-              Tüm Ürünler
-            </Link>
-          </div>
-        </li>
+        {props.categoryName && (
+          <li>
+            <div className="flex items-center">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <Link
+                href="/products"
+                className="ml-1 text-sm font-medium text-gray-700 "
+              >
+                Tüm Ürünler
+              </Link>
+            </div>
+          </li>
+        )}
+        {props.categoryName && (
+          <li>
+            <div className="flex items-center">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <Link
+                href="/products"
+                className="ml-1 text-sm font-medium text-gray-700 "
+              >
+                {firstCharacterUpper(props.categoryName)}
+              </Link>
+            </div>
+          </li>
+        )}
         {props.categoryName && (
           <li aria-current="page">
             <div className="flex items-center">
@@ -66,7 +94,7 @@ const BreadCrumb = (props: Props) => {
                 ></path>
               </svg>
               <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                {props.categoryName && firstCharacterUpper(props.categoryName)}
+                {props.productName && firstCharacterUpper(props.productName)}
               </span>
             </div>
           </li>
