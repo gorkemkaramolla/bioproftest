@@ -6,7 +6,7 @@ type Props = {};
 const about = (props: Props) => {
   return (
     <div>
-      <BreadCrumb categoryName="Hakkımızda"></BreadCrumb>
+      <BreadCrumb regularCategoryName={"about"}></BreadCrumb>
 
       <div className="mx-auto  px-12 container">
         <h1 className="text-3xl text-center font-bold">Hakkımızda</h1>

@@ -5,6 +5,7 @@ import { Collapse, Text, Tooltip } from '@nextui-org/react';
 import Link from 'next/link';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
+import ProductDrawer from '@/components/Product/ProductDrawer';
 const Zoom = ({ src }: { src: string }) => {
   const [zoom, setZoom] = React.useState({
     backgroundImage: `url(${src})`,
@@ -72,7 +73,10 @@ const Car = () => {
   };
   return (
     <div>
-      <BreadCrumb categoryName={product?.category} />
+      <BreadCrumb
+        productName={product?.name}
+        categoryName={product?.category}
+      />
 
       <div className='mt-8 container mx-auto '>
         <div className='flex flex-col md:flex-row items-start [&>div]:mx-8 '>
