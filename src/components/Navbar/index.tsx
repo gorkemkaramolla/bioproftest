@@ -12,7 +12,8 @@ const links: { [key: string]: string } = {
   "Güneş Koruyucu": "sunscreens",
   "Tüm Ürünler": "products",
 };
-
+import categorires from "@/util/categories";
+import { firstCharacterUpper } from "@/util/utilfunctions";
 const NavigationBar: FC<{}> = () => {
   const { isBrowser } = useSSR();
 
@@ -37,16 +38,40 @@ const NavigationBar: FC<{}> = () => {
         variant="default"
         className="text-sm lg:text-base pl-8"
       >
-        {Object.keys(links).map((link) => (
+        {/* {Object.keys(links).map((link) => (
           <Link
             key={link}
             title={link}
-            href={"/" + links[link]}
+            href={"/products/category/" + links[link]}
             className="text-xs lg:text-base "
           >
             {link}
           </Link>
-        ))}
+        ))} */}
+        {categorires.map((category, i) => {
+          if (category === "tüm ürünler") {
+            return (
+              <Link
+                key={i}
+                title={category}
+                href={"/products/"}
+                className="text-xs lg:text-base "
+              >
+                {firstCharacterUpper(category)}
+              </Link>
+            );
+          } else
+            return (
+              <Link
+                key={i}
+                title={category}
+                href={"/products/category/" + category}
+                className="text-xs lg:text-base "
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </Link>
+            );
+        })}
       </Navbar.Content>
       <Navbar.Content
         css={{

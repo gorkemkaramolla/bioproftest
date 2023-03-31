@@ -56,21 +56,7 @@ const Car = () => {
   const router = useRouter();
 
   const { slug } = router.query;
-  const product = products.filter(
-    (product) => product.name === String(slug)
-  )[0];
-  const handleForward = () => {
-    if (product?.id < products.length) {
-      const productID = product.id;
-      router.push(`/products/${products[productID].name}`);
-    }
-  };
-  const handleBackward = () => {
-    if (product?.id > 1) {
-      const productID = product?.id;
-      router.push(`/products/${products[productID - 2].name}`);
-    }
-  };
+  const product = products.filter((product) => product.id === Number(slug))[0];
   return (
     <div>
       <BreadCrumb categoryName={product?.category} />
@@ -86,7 +72,13 @@ const Car = () => {
                 {product?.caption}{" "}
                 <div className="flex gap-2">
                   <Tooltip
-                    onClick={handleBackward}
+                    onClick={() =>
+                      router.push(
+                        `/products/${
+                          product?.id - 1 ? product?.id - 1 : products.length
+                        }`
+                      )
+                    }
                     placement="bottomEnd"
                     content={
                       <TooltipCard
@@ -138,7 +130,15 @@ const Car = () => {
                   </Tooltip>
 
                   <Tooltip
-                    onClick={handleForward}
+                    onClick={() =>
+                      router.push(
+                        `/products/${
+                          product?.id + 1 <= products.length
+                            ? product?.id + 1
+                            : 1
+                        }`
+                      )
+                    }
                     placement="bottomEnd"
                     content={
                       <TooltipCard

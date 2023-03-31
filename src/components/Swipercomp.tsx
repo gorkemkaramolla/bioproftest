@@ -41,14 +41,19 @@ const Swipercomp = (props: Props) => {
         className="mySwiper w-screen"
         breakpoints={breakpoints}
       >
-        {products.map((img, index) => (
-          <SwiperSlide className="mb-8" key={index}>
+        {products.map((product, index) => (
+          <SwiperSlide className="mb-8 group transition-all" key={product.id}>
             <Link
-              href={"/products/" + String(img.id)}
+              href={"/products/" + product.name}
               className="flex flex-col items-center justify-center"
             >
-              <img className="w-36 sm:w-48" src={img.url} alt="Image 1" />
-              <p>{img?.description}</p>
+              <img className="w-36 sm:w-48" src={product.url} alt="Image 1" />
+              <hr className="border border-green-600 w-full rounded-xl my-4 transition-colors duration-200" />
+              <p className="text-sm group-hover:text-green-400  flex justify-start text-left w-full transition-colors duration-200">
+                {product.caption.length > 55
+                  ? product.caption.slice(0, 55) + "..."
+                  : product.caption}
+              </p>
             </Link>
           </SwiperSlide>
         ))}
