@@ -3,15 +3,19 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import { Button } from '@nextui-org/react';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { FiMenu } from 'react-icons/fi';
+
+import categorires from '@/util/categories';
+import Link from 'next/link';
+
+import { useRouter } from 'next/router';
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 export default function TemporaryDrawer() {
+  const router = useRouter();
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -41,20 +45,36 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {categorires.map((category, index) => (
+          <ListItem
+            sx={{ textTransform: 'capitalize' }}
+            key={index}
+            disablePadding
+          >
             <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
+              {category !== 'tüm ürünler' ? (
+                <Link
+                  title={category}
+                  href={'/products/category/' + category}
+                  className={`${
+                    router.asPath === `/products/category/${category}`
+                      ? 'text-green-500'
+                      : ''
+                  }`}
+                >
+                  <ListItemText primary={category} />
+                </Link>
+              ) : (
+                <Link
+                  title={category}
+                  href={'/products/'}
+                  className={`${
+                    router.asPath === `/products` ? 'text-green-500' : ''
+                  }`}
+                >
+                  <ListItemText primary={category} />
+                </Link>
+              )}
             </ListItemButton>
           </ListItem>
         ))}
