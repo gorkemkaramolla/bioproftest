@@ -1,10 +1,8 @@
 const categorires = [
-  'anti-dark-spot-care',
-  'body-care',
-  'face-care',
-  'anti-acne',
-  'anti-aging',
-  'cleansing',
+  'temizleyici-arındırıcı',
+  'yoğun-nem-desteği',
+  'onarıcı-bakım',
+  'güneş-koruyucu',
   'tüm ürünler',
 ];
 export default categorires;

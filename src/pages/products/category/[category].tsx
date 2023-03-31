@@ -1,9 +1,9 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import React from "react";
-import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
-import products, { ProductType } from "@/util/products";
-import Product from "@/components/Product/Product";
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
+import React from 'react';
+import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
+import products, { ProductType } from '@/util/products';
+import Product from '@/components/Product/Product';
 
 type CategoryProps = {
   productList: ProductType[];
@@ -17,8 +17,8 @@ const Category = ({ productList }: CategoryProps) => {
     <div>
       <BreadCrumb categoryName={String(category)}></BreadCrumb>
 
-      <div className="w-full mx-auto h-full">
-        <div className="w-full container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 justify-center items-center">
+      <div className='w-full mx-auto h-full'>
+        <div className='w-full container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 justify-center items-center'>
           {productList.length === 0 ? (
             <p>Bu kategoriye ait ürün bulunmamaktadır</p>
           ) : (
@@ -56,13 +56,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const categories = [
-    "anti-dark-spot-care",
-    "body-care",
-    "face-care",
-    "anti-acne",
-    "anti-aging",
-    "cleansing",
-    "tüm ürünler",
+    'temizleyici-arındırıcı',
+    'yoğun-nem-desteği',
+    'onarıcı-bakım',
+    'güneş-koruyucu',
+    'tüm ürünler',
   ];
 
   const paths = categories.map((category) => ({

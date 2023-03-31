@@ -15,7 +15,24 @@ import Banner from '@/components/regular-banner/Banner';
 import Video from '@/components/Video/Video';
 import BrandSwiper from '@/components/BrandSwiper/BrandSwiper';
 import SocialMediaSquare from '../components/SocialMediaSquares/SocialMediaSquare';
+import { useSpring, animated } from '@react-spring/web';
+
 export default function Home() {
+  const fromTop = { opacity: 0, y: -300 };
+  const toTop = { opacity: 1, y: 0 };
+  const fromBottom = { opacity: 0, y: 300 };
+  const toBottom = { opacity: 1, y: 0 };
+
+  const topProps = useSpring({
+    from: fromTop,
+    to: toTop,
+    config: { duration: 2000 },
+  });
+  const bottomProps = useSpring({
+    from: fromBottom,
+    to: toBottom,
+    config: { duration: 2000 },
+  });
   return (
     <div>
       <main className={styles.main}>
@@ -24,16 +41,22 @@ export default function Home() {
           className=' container grid mt-4 row-span-1 grid-cols-12 '
         >
           <div className='container col-span-12 '>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <BannerSwiper />
-            </div>
-            <Swipercomp />
+            <animated.div style={topProps}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <BannerSwiper />
+              </div>
+            </animated.div>
+            <animated.div style={bottomProps}>
+              <div>
+                <Swipercomp />
+              </div>
+            </animated.div>
           </div>
           {/* <div className="container mx-auto gap-8  grid-rows-1 grid grid-cols-12">
           <Banner />

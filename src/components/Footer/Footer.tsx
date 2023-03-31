@@ -34,7 +34,7 @@ const Footer = () => {
           <Link className='text-blue-400 hover:text-orange-400' href='/about'>
             Hakkımızda
           </Link>
-          <Link className='text-blue-400 hover:text-orange-400' href=''>
+          <Link className='text-blue-400 hover:text-orange-400' href='/contact'>
             İletişim
           </Link>
           <Link className='text-blue-400 hover:text-orange-400' href=''>
