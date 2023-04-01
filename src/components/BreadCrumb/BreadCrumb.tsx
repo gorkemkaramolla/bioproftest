@@ -4,7 +4,7 @@ import { firstCharacterUpper } from '@/util/utilfunctions';
 import { IoHomeOutline } from 'react-icons/io5';
 import all from '@/pages/products';
 type Props = {
-  categoryName?: string;
+  categoryName?: { name: string; endpoint: string } | undefined | null;
   productName?: string;
   all?: boolean;
   regularCategoryName?: string;
@@ -23,7 +23,7 @@ const BreadCrumb = (props: Props) => {
             className='inline-flex items-center text-sm font-medium text-gray-700  '
           >
             <IoHomeOutline className='mr-2 mb-[0.1rem] w-[1rem] h-[1rem]' />
-            Home
+            Ana Sayfa
           </Link>
         </li>
         {props.regularCategoryName && (
@@ -93,10 +93,10 @@ const BreadCrumb = (props: Props) => {
                 ></path>
               </svg>
               <Link
-                href={`/products/category/${props.categoryName}`}
+                href={`/products/category/${props.categoryName.endpoint}`}
                 className='ml-1 text-sm font-medium text-gray-700 '
               >
-                {firstCharacterUpper(props.categoryName)}
+                {props.categoryName.name}
               </Link>
             </div>
           </li>

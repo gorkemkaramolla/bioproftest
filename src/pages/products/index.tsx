@@ -14,7 +14,7 @@ const all = () => {
             name={product.name}
             key={i}
             id={product.id}
-            category={product.category}
+            category={product.category.name}
             url={product.url}
             caption={product.caption}
           />

@@ -78,7 +78,7 @@ const Car = () => {
     <div>
       <BreadCrumb
         productName={product?.name}
-        categoryName={product?.category}
+        categoryName={product?.category.name}
       />
 
       <div className='mt-8 container mx-auto '>
@@ -174,7 +174,7 @@ const Car = () => {
                   href='/'
                   className='text-slate-400 hover:text-orange-500 transition-all	'
                 >
-                  {product?.category}
+                  {product?.category.name}
                 </Link>
               </div>
             </div>
@@ -188,14 +188,22 @@ const Car = () => {
       <div className='p-8 m-8 border container mx-auto'>
         {isBrowser && (
           <Collapse.Group>
-            <Collapse title={product?.description?.at(0)?.title} expanded>
-              <Text>{product?.description?.at(0)?.text}</Text>
+            <Collapse
+              className='text-md font-bold'
+              title={product?.description?.at(0)?.title}
+              expanded
+            >
+              <Text className='text-md font-normal p-8'>
+                {product?.description?.at(0)?.text}
+              </Text>
             </Collapse>
             {product?.description.map((des, index) => {
               if (index > 0)
                 return (
-                  <Collapse title={des.title}>
-                    <Text>{des.text}</Text>
+                  <Collapse title={des.title} className='text-md font-bold'>
+                    <Text className='text-md font-normal py-1 px-8'>
+                      {des.text}
+                    </Text>
                   </Collapse>
                 );
               else return;

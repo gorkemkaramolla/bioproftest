@@ -11,18 +11,18 @@ const NavLink = () => {
   return (
     <div className='capitalize m-2'>
       {categorires.map((category, i) => {
-        if (category === 'tüm ürünler') {
+        if (category.name === 'Tüm Ürünler') {
           return (
             <Link
               key={i}
-              title={category}
+              title={category.name}
               href={'/products/'}
               className={`text-xs lg:text-base capitalize  ${
                 router.asPath === `/products` ? 'text-green-500' : ''
               } `}
             >
               <span className='hover:text-green-500 capitalize '>
-                {firstCharacterUpper(category)}
+                {category.name}
               </span>
             </Link>
           );
@@ -30,17 +30,17 @@ const NavLink = () => {
           return (
             <Link
               key={i}
-              title={category}
-              href={'/products/category/' + category}
+              title={category.name}
+              href={'/products/category/' + category.endpoint}
               className={`text-xs lg:text-base pr-8 capitalize 
               ${
-                router.asPath === `/products/category/${category}`
+                router.asPath === `/products/category/${category.endpoint}`
                   ? 'text-green-500'
                   : ''
               }`}
             >
               <span className='hover:text-green-500 capitalize transition-colors'>
-                {firstCharacterUpper(category)}
+                {category.name}
               </span>
             </Link>
           );
