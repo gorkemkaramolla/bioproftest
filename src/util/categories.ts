@@ -1,8 +1,8 @@
 const categorires = [
-  'temizleyici-arındırıcı',
-  'yoğun-nem-desteği',
-  'onarıcı-bakım',
-  'güneş-koruyucu',
+  'temizleyici-arindirici',
+  'yogun-nem-destegi',
+  'onarici-bakim',
+  'gunes-koruyucu',
   'tüm ürünler',
 ];
 export default categorires;

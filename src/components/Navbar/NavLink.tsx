@@ -1,13 +1,13 @@
 // import { Button } from '@mui/material';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@nextui-org/react';
 import categorires from '@/util/categories';
 import { useRouter } from 'next/router';
 import { firstCharacterUpper } from '@/util/utilfunctions';
-
 const NavLink = () => {
   const router = useRouter();
+
   return (
     <div className='capitalize m-2'>
       {categorires.map((category, i) => {

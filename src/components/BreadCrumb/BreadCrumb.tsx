@@ -22,7 +22,7 @@ const BreadCrumb = (props: Props) => {
             href='/'
             className='inline-flex items-center text-sm font-medium text-gray-700  '
           >
-            <IoHomeOutline className='mr-4 w-[1rem] h-[1rem]' />
+            <IoHomeOutline className='mr-2 mb-[0.1rem] w-[1rem] h-[1rem]' />
             Home
           </Link>
         </li>

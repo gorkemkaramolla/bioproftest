@@ -66,7 +66,10 @@ export default function Home() {
           <Video />
         </div>
         <div className='px-5 py-2 container w-screen row-span-1 grid grid-cols-12'>
-          <Banner imgSrc='desktop-mucize-banner.jpg' />
+          <Banner
+            url={'/products/Oil%20Yo%C4%9Fun%20Bak%C4%B1m%20Ya%C4%9F%C4%B1'}
+            imgSrc='desktop-mucize-banner.jpg'
+          />
         </div>
 
         <div className='container grid w-screen  px-3 pt-2 row-span-1 grid-cols-12 '>
@@ -80,7 +83,10 @@ export default function Home() {
           ))}
         </div>
         <div className=' container justify-center  w-screen   px-5   grid grid-cols-12'>
-          <Banner imgSrc='desktop-serumlar-banner.jpeg' />
+          <Banner
+            url={'/products/y%C3%BCz-temizleme-jeli'}
+            imgSrc='desktop-serumlar-banner.jpeg'
+          />
         </div>
         <div className=' container justify-center  w-screen  py-2 px-5   grid grid-cols-12'>
           <BrandSwiper></BrandSwiper>
