@@ -13,7 +13,7 @@ const Blog = () => {
         </div>
         <div className='flex flex-col gap-6 items-center'>
           {blogs.map((blog, index) => (
-            <div className='w-full'>
+            <div key={index} className='w-full'>
               <Link
                 key={index}
                 href={'/blog/' + blog.title.toLowerCase().replaceAll(' ', '-')}
