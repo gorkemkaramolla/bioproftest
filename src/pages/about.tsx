@@ -9,7 +9,7 @@ const about = (props: Props) => {
       <BreadCrumb regularCategoryName={'about'}></BreadCrumb>
 
       <div className='mx-auto  px-12 container'>
-        <h1 className='text-3xl text-center font-bold'>Hakkımızda</h1>
+        <h1 className='text-3xl text-center font-bold mb-8'>Hakkımızda</h1>
         <p className='mt-4 leading-7  '>
           Hakkımızda Sinoz Kozmetik olarak kurulduğumuz 2008 yılından bu yana
           cilt bakımı alanında yenilikçi, kaliteli ve zengin içerikli ürün

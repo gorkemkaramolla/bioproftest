@@ -18,7 +18,7 @@ const NavLink = () => {
               title={category}
               href={'/products/'}
               className={`text-xs lg:text-base capitalize  ${
-                router.asPath === `/products` ? 'text-green-500 ' : ''
+                router.asPath === `/products` ? 'text-green-500' : ''
               } `}
             >
               <span className='hover:text-green-500 capitalize '>
@@ -32,7 +32,8 @@ const NavLink = () => {
               key={i}
               title={category}
               href={'/products/category/' + category}
-              className={`text-xs lg:text-base pr-8 capitalize ${
+              className={`text-xs lg:text-base pr-8 capitalize 
+              ${
                 router.asPath === `/products/category/${category}`
                   ? 'text-green-500'
                   : ''
