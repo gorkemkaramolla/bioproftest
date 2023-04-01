@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { firstCharacterUpper } from '@/util/utilfunctions';
+import { IoHomeOutline } from 'react-icons/io5';
 import all from '@/pages/products';
 type Props = {
   categoryName?: string;
@@ -12,7 +13,7 @@ type Props = {
 const BreadCrumb = (props: Props) => {
   return (
     <nav
-      className='flex py-4  px-8  mb-8  bg-[rgb(252,252,252)]   border-b'
+      className='flex py-4  px-[5%]  mb-8  bg-[rgb(252,252,252)]  border-b'
       aria-label='Breadcrumb'
     >
       <ol className='inline-flex items-center space-x-1 md:space-x-3'>
@@ -21,15 +22,7 @@ const BreadCrumb = (props: Props) => {
             href='/'
             className='inline-flex items-center text-sm font-medium text-gray-700  '
           >
-            <svg
-              aria-hidden='true'
-              className='w-4 h-4 mr-2'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path d='M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z'></path>
-            </svg>
+            <IoHomeOutline className='mr-4 w-[1rem] h-[1rem]' />
             Home
           </Link>
         </li>
