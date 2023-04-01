@@ -6,7 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FiMenu } from 'react-icons/fi';
-
+import Button from '../Buttons/Button';
 import categorires from '@/util/categories';
 import Link from 'next/link';
 
@@ -39,7 +39,7 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 400 }}
+      sx={{ width: 350 }}
       role='presentation'
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -60,12 +60,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <button
-              className='text-black hover:bg-slate-50'
-              onClick={() => router.push('https://trendyol.com')}
-            >
-              Satın Al
-            </button>
+            <Button url='https://trendyol.com' name='Satın Al'></Button>
           </div>
           <div className='flex flex-col items-center'>
             <div>
@@ -77,13 +72,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <button
-              className='text-black hover:bg-slate-50'
-            
-              onClick={() => router.push('https://hepsiburada.com')}
-            >
-              Satın Al
-            </button>
+            <Button url='https://www.hepsiburada.com/' name='Satın Al'></Button>
           </div>
         </div>
         <div className='divide-x flex p-4'>
@@ -97,9 +86,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <button onClick={() => router.push('https://watsons.com')}>
-              Satın Al
-            </button>
+            <Button url='https://www.watsons.com/' name={'Satın Al'}></Button>
           </div>
         </div>
       </div>
@@ -110,12 +97,12 @@ export default function TemporaryDrawer() {
     <div>
       <React.Fragment key={'right'}>
         <button
-          color={'default'}
-          className='hover:bg-red-400'
+          className='w-full bg-black py-3 text-white mt-6 text-lg '
           onClick={toggleDrawer('right', true)}
         >
           Satın Al
         </button>
+
         <Drawer
           anchor={'right'}
           open={state['right']}
