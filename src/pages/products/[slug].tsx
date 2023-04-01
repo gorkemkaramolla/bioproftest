@@ -185,7 +185,7 @@ const Car = () => {
         <div className='font-semibold'>Açıklama</div>
         <hr className='border border-black' />
       </div>
-      <div className='p-8 m-8 border'>
+      <div className='p-8 m-8 border container mx-auto'>
         <Collapse.Group>
           <Collapse title={product.description?.at(0)?.title} expanded>
             <Text>{product.description?.at(0)?.text}</Text>

@@ -6,8 +6,8 @@ import MailLink from '../MailLink/MailLink';
 const Footer = () => {
   return (
     <footer className='mt-4'>
-      <div className='flex mx-auto flex-col lg:flex-row gap-8 justify-center items-center bg-[rgb(244,244,244)] px-8 py-16'>
-        <div className='w-1/2 flex flex-col gap-4 items-center  text-center md:text-start md:items-start '>
+      <div className='flex mx-auto  flex-col lg:flex-row gap-8 md:gap-16 lg:gap-32 justify-center items-center bg-[rgb(244,244,244)] px-8 py-16'>
+        <div className='max-w-[30rem] flex flex-col gap-4 items-center  text-center md:text-start md:items-start '>
           <Image
             width={120}
             height={45}
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <SocialMediaIcons />
         </div>
-        <div className='w-1/2 text-center md:text-start flex flex-col gap-1'>
+        <div className='max-w-[30rem] text-center md:text-start flex flex-col gap-1'>
           <div className='text-2xl'>İletişim</div>
           <Link href='/contact' className='text-blue-400 hover:text-orange-400'>
             Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 | Sarıyer/
