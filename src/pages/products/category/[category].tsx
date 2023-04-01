@@ -18,7 +18,7 @@ const Category = ({ productList }: CategoryProps) => {
       <BreadCrumb categoryName={String(category)}></BreadCrumb>
 
       <div className='w-full mx-auto h-full'>
-        <div className='w-full container md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-12 mx-auto grid lg:grid-cols-4 justify-center items-center'>
+        <div className='w-fit p-8 md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-8 mx-auto grid lg:grid-cols-4 '>
           {productList.length === 0 ? (
             <p>Bu kategoriye ait ürün bulunmamaktadır</p>
           ) : (
