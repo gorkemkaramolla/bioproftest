@@ -187,30 +187,18 @@ const Car = () => {
       </div>
       <div className='p-8 m-8 border'>
         <Collapse.Group>
-          <Collapse title='Option A' expanded>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Text>
+          <Collapse title={product.description?.at(0)?.title} expanded>
+            <Text>{product.description?.at(0)?.text}</Text>
           </Collapse>
-          <Collapse title='Option B'>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Text>
-          </Collapse>
-          <Collapse title='Option C'>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Text>
-          </Collapse>
+          {product.description.map((des, index) => {
+            if (index > 0)
+              return (
+                <Collapse title={des.title}>
+                  <Text>{des.text}</Text>
+                </Collapse>
+              );
+            else return;
+          })}
         </Collapse.Group>
       </div>
     </div>
