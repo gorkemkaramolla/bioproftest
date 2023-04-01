@@ -84,7 +84,7 @@ const Car = () => {
         }}
       />
 
-      <div className='mt-8 container mx-auto '>
+      <div className='mt-8 container mx-auto my-24'>
         <div className='flex flex-col md:flex-row md:items-start items-center [&>div]:mx-8 '>
           <div className='md:w-1/2'>
             <Zoom src={product?.url} />

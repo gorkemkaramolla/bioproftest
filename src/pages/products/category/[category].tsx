@@ -29,8 +29,11 @@ const Category = ({ productList }: CategoryProps) => {
   return (
     <div>
       <BreadCrumb categoryName={handleCategory()}></BreadCrumb>
+      <div className='w-full mx-auto h-full my-12'>
+        <div className='text-sm mx-6'>
+          {'Gösterilen sonuç sayısı: ' + productList.length}
+        </div>
 
-      <div className='w-full mx-auto h-full'>
         <div className='w-fit p-8 md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-8 mx-auto grid lg:grid-cols-4 '>
           {productList.length === 0 ? (
             <p>Bu kategoriye ait ürün bulunmamaktadır</p>

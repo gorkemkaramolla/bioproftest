@@ -9,27 +9,27 @@ const Footer = () => {
       <div>
         <footer className='mt-4 container mx-auto '>
           <div className='flex mx-auto  flex-col lg:flex-row gap-8 md:gap-16 lg:gap-32 justify-center items-center bg-[rgb(244,244,244)] px-8 py-16'>
-            <div className=' flex flex-col gap-4 items-center  text-center md:text-start md:items-start '>
+            <div className=' flex flex-col gap-4 items-center  text-center lg:text-start lg:items-start '>
               <Image
-                width={120}
-                height={45}
-                className='h-16 w-40'
+                className='my-4'
+                width={250}
+                height={100}
                 src='/bioprof-logo.png'
                 alt='logo'
               />
 
-              <div className='overflow-clip'>
+              <div className='overflow-clip self-center'>
                 Sinoz cilt bakım ürünlerimizi; doğanın zengin özleri ve
                 teknoloji ile birleştirerek, farklı cilt tiplerinin
                 ihtiyaçlarına uygun olarak üretip, müşterilerimize sunmaktayız.
               </div>
               <SocialMediaIcons />
             </div>
-            <div className='max-w-[30rem] text-center md:text-start flex flex-col gap-1'>
-              <div className='text-2xl'>İletişim</div>
+            <div className=' text-center lg:text-start flex flex-col gap-1'>
+              <div className='text-2xl my-4'>İletişim</div>
               <Link
                 href='/contact'
-                className='hover:underline hover:text-gray-400'
+                className='hover:underline hover:text-gray-w'
               >
                 Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 |
                 Sarıyer/ İstanbul
