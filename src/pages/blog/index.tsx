@@ -16,9 +16,15 @@ const Blog = () => {
             <div key={index} className='w-full'>
               <Link
                 key={index}
-                href={'/blog/' + blog.title.toLowerCase().replaceAll(' ', '-')}
+                href={
+                  '/blog/' + blog?.title?.toLowerCase().replaceAll(' ', '-')
+                }
               >
-                <BlogCard src={blog.src} title={blog.title} text={blog.text} />
+                <BlogCard
+                  src={blog.src}
+                  title={blog?.title}
+                  text={blog?.text}
+                />
               </Link>
             </div>
           ))}
