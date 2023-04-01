@@ -78,17 +78,20 @@ const Car = () => {
     <div>
       <BreadCrumb
         productName={product?.name}
-        categoryName={{ name: product?.category.name }}
+        categoryName={{
+          name: product?.category.name,
+          endpoint: product?.category.endpoint,
+        }}
       />
 
       <div className='mt-8 container mx-auto '>
-        <div className='flex flex-col md:flex-row items-start [&>div]:mx-8 '>
+        <div className='flex flex-col md:flex-row md:items-start items-center [&>div]:mx-8 '>
           <div className='md:w-1/2'>
             <Zoom src={product?.url} />
           </div>
           <div className='md:w-1/2 mt-4 md:mt-0'>
             <div className='md:w-3/4 w-full mx-auto'>
-              <div className='text-xl font-bold justify-between flex items-center'>
+              <div className='text-xl font-bold justify-between gap-4 flex items-center'>
                 {product?.caption}{' '}
                 {isBrowser && (
                   <div className='flex gap-2'>

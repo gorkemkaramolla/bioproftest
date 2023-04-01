@@ -10,11 +10,11 @@ const MailLink = (props: Props) => {
   };
   return (
     <Link
-      className=' text-blue-400 hover:text-orange-400'
+      className='hover:underline   hover:text-gray-400'
       href={`mailto:bioprofsatislar@gmail.com?subject=${handleMail(
         mailSubject
       )}&body=${handleMail(mailBody)}`}
-    >
+    > 
       Mail: bilgi@bioprof.com
     </Link>
   );

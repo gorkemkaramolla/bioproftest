@@ -29,26 +29,26 @@ const Footer = () => {
               <div className='text-2xl'>İletişim</div>
               <Link
                 href='/contact'
-                className='text-blue-400 hover:text-orange-400'
+                className='hover:underline hover:text-gray-400'
               >
                 Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 |
                 Sarıyer/ İstanbul
               </Link>
               <MailLink />
               <Link
-                className='text-blue-400 hover:text-orange-400'
+                className='hover:underline hover:text-gray-400'
                 href='/about'
               >
                 Hakkımızda
               </Link>
               <Link
-                className='text-blue-400 hover:text-orange-400'
+                className='hover:underline hover:text-gray-400'
                 href='/contact'
               >
                 İletişim
               </Link>
               <Link
-                className='text-blue-400 hover:text-orange-400'
+                className='hover:underline hover:text-gray-400'
                 href='/blog'
               >
                 Blog
