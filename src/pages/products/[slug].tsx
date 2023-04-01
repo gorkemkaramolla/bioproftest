@@ -203,7 +203,11 @@ const Car = () => {
             {product?.description.map((des, index) => {
               if (index > 0)
                 return (
-                  <Collapse title={des.title} className='text-md font-bold'>
+                  <Collapse
+                    key={index}
+                    title={des.title}
+                    className='text-md font-bold'
+                  >
                     <Text className='text-md font-normal py-1 px-8'>
                       {des.text}
                     </Text>
