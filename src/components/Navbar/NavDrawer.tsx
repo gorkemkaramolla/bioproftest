@@ -56,9 +56,9 @@ export default function TemporaryDrawer() {
             disablePadding
           >
             <ListItemButton>
-              {category !== 'tüm ürünler' ? (
+              {category.name !== 'tüm ürünler' ? (
                 <Link
-                  title={category}
+                  title={category.name}
                   href={'/products/category/' + category}
                   className={`${
                     router.asPath === `/products/category/${category}`
@@ -66,17 +66,17 @@ export default function TemporaryDrawer() {
                       : ''
                   }`}
                 >
-                  <ListItemText primary={category} />
+                  <ListItemText primary={category.name} />
                 </Link>
               ) : (
                 <Link
-                  title={category}
+                  title={category.name}
                   href={'/products/'}
                   className={`${
                     router.asPath === `/products` ? 'text-green-500 ' : ''
                   }`}
                 >
-                  <ListItemText primary={category} />
+                  <ListItemText primary={category.name} />
                 </Link>
               )}
             </ListItemButton>

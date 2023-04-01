@@ -59,7 +59,7 @@ const Car = () => {
   const product = products.filter((product) => product.id === Number(slug))[0];
   return (
     <div>
-      <BreadCrumb categoryName={product?.category.name} />
+      <BreadCrumb categoryName={{ name: product?.category?.name }} />
 
       <div className='mt-2 container mx-auto '>
         <div className='flex flex-col md:flex-row items-start [&>div]:mx-8 '>

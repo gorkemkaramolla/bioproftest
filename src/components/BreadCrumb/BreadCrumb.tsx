@@ -4,7 +4,7 @@ import { firstCharacterUpper } from '@/util/utilfunctions';
 import { IoHomeOutline } from 'react-icons/io5';
 import all from '@/pages/products';
 type Props = {
-  categoryName?: { name: string; endpoint: string } | undefined | null;
+  categoryName?: { name?: string; endpoint?: string } | undefined | null;
   productName?: string;
   all?: boolean;
   regularCategoryName?: string;
