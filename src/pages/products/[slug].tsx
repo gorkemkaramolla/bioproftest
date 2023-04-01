@@ -78,7 +78,7 @@ const Car = () => {
     <div>
       <BreadCrumb
         productName={product?.name}
-        categoryName={product?.category.name}
+        categoryName={{ name: product?.category.name }}
       />
 
       <div className='mt-8 container mx-auto '>
