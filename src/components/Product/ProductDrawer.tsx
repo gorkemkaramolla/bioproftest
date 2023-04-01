@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { Button } from '@nextui-org/react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -61,21 +60,12 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button
-              size={'sm'}
-              auto
-              ghost
+            <button
               className='text-black hover:bg-slate-50'
-              css={{
-                color: '$black',
-                borderWidth: 'thin',
-                borderColor: '$accents4',
-                borderRadius: '0',
-              }}
               onClick={() => router.push('https://trendyol.com')}
             >
               Satın Al
-            </Button>
+            </button>
           </div>
           <div className='flex flex-col items-center'>
             <div>
@@ -87,21 +77,13 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button
-              size={'sm'}
-              auto
-              ghost
+            <button
               className='text-black hover:bg-slate-50'
-              css={{
-                color: '$black',
-                borderWidth: 'thin',
-                borderColor: '$accents4',
-                borderRadius: '0',
-              }}
+            
               onClick={() => router.push('https://hepsiburada.com')}
             >
               Satın Al
-            </Button>
+            </button>
           </div>
         </div>
         <div className='divide-x flex p-4'>
@@ -115,21 +97,9 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button
-              size={'sm'}
-              auto
-              ghost
-              className='text-black hover:bg-slate-50'
-              css={{
-                color: '$black',
-                borderWidth: 'thin',
-                borderColor: '$accents4',
-                borderRadius: '0',
-              }}
-              onClick={() => router.push('https://watsons.com')}
-            >
+            <button onClick={() => router.push('https://watsons.com')}>
               Satın Al
-            </Button>
+            </button>
           </div>
         </div>
       </div>
@@ -139,20 +109,13 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <React.Fragment key={'right'}>
-        <Button
-          size={'lg'}
+        <button
           color={'default'}
           className='hover:bg-red-400'
-          css={{
-            w: 'stretch',
-            mt: '$15',
-            backgroundColor: '$accents9',
-            borderRadius: '0',
-          }}
           onClick={toggleDrawer('right', true)}
         >
           Satın Al
-        </Button>
+        </button>
         <Drawer
           anchor={'right'}
           open={state['right']}
