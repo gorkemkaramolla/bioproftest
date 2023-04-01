@@ -186,20 +186,22 @@ const Car = () => {
         <hr className='border border-black' />
       </div>
       <div className='p-8 m-8 border container mx-auto'>
-        <Collapse.Group>
-          <Collapse title={product.description?.at(0)?.title} expanded>
-            <Text>{product.description?.at(0)?.text}</Text>
-          </Collapse>
-          {product.description.map((des, index) => {
-            if (index > 0)
-              return (
-                <Collapse title={des.title}>
-                  <Text>{des.text}</Text>
-                </Collapse>
-              );
-            else return;
-          })}
-        </Collapse.Group>
+        {isBrowser && (
+          <Collapse.Group>
+            <Collapse title={product?.description?.at(0)?.title} expanded>
+              <Text>{product?.description?.at(0)?.text}</Text>
+            </Collapse>
+            {product?.description.map((des, index) => {
+              if (index > 0)
+                return (
+                  <Collapse title={des.title}>
+                    <Text>{des.text}</Text>
+                  </Collapse>
+                );
+              else return;
+            })}
+          </Collapse.Group>
+        )}
       </div>
     </div>
   );
