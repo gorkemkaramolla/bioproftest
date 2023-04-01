@@ -21,7 +21,7 @@ const Blog = () => {
                 }
               >
                 <BlogCard
-                  src={blog.src}
+                  src={blog?.src}
                   title={blog?.title}
                   text={blog?.text}
                 />
