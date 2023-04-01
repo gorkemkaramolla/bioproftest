@@ -56,10 +56,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const categories = [
-    'temizleyici-arındırıcı',
-    'yoğun-nem-desteği',
-    'onarıcı-bakım',
-    'güneş-koruyucu',
+    'temizleyici-arindirici',
+    'yogun-nem-destegi',
+    'onarici-bakim',
+    'gunes-koruyucu',
     'tüm ürünler',
   ];
 
