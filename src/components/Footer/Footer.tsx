@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
           </div>
         </footer>
-        <div className='text-center self-center w-screen mx-auto py-8 bg-black  text-gray-400 text-md lg:ml-0 '>
+        <div className='text-center self-center w-screen mx-auto py-8 px-5 bg-black  text-gray-400 text-md lg:ml-0 '>
           {new Date().getFullYear()} © bioprof.com · Tüm hakları saklıdır.
         </div>
       </div>
