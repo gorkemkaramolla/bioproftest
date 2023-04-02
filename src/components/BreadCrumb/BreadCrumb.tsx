@@ -54,19 +54,20 @@ const BreadCrumb = (props: Props) => {
               </div>
             </li>
           )}
-          {props.categoryName?.name !== 'Tüm Ürünler' && (
-            <li>
-              <div className='flex items-center'>
-                <BsChevronRight />
-                <Link
-                  href={`/products/category/${props?.categoryName?.endpoint}`}
-                  className='ml-1 font-medium text-gray-700 '
-                >
-                  {props?.categoryName?.name}
-                </Link>
-              </div>
-            </li>
-          )}
+          {props.categoryName?.name &&
+            props.categoryName?.name !== 'Tüm Ürünler' && (
+              <li>
+                <div className='flex items-center'>
+                  <BsChevronRight />
+                  <Link
+                    href={`/products/category/${props?.categoryName?.endpoint}`}
+                    className='ml-1 font-medium text-gray-700 '
+                  >
+                    {props?.categoryName?.name}
+                  </Link>
+                </div>
+              </li>
+            )}
           {props.categoryName && props.productName && (
             <li aria-current='page'>
               <div className='flex items-center'>
