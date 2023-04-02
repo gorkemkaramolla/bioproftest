@@ -11,7 +11,7 @@ const BlogCard = ({
   text: string;
 }) => {
   return (
-    <div className='grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 group p-12 gap-10 shadow-2xl '>
+    <div className='grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 group p-4 md:p-12 gap-10 shadow-2xl rounded-sm'>
       <div className='overflow-hidden rounded-3xl bg-cover shadow-2xl'>
         <img
           src={src}

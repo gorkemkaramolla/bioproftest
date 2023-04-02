@@ -60,41 +60,37 @@ export default function TemporaryDrawer() {
       </DrawerHeader>
       <List>
         {categorires.map((category, index) => (
-          <ListItem
-            sx={{
-              textTransform: 'capitalize',
-              paddingTop: '0.7rem',
-              paddinBottm: '0.7rem',
-            }}
-            key={index}
-            disablePadding
-          >
-            <ListItemButton>
-              {category.name !== 'Tüm Ürünler' ? (
-                <Link
-                  title={category.name}
-                  href={'/products/category/' + category.endpoint}
-                  className={`${
+          <Link
+            title={category.name}
+            href={
+              category.name === 'Tüm Ürünler'
+                ? '/products'
+                : '/products/category/' + category.endpoint
+            }
+            className={
+              category.name === 'Tüm Ürünler'
+                ? `${router.asPath === `/products` ? 'text-green-500' : ''}`
+                : `${
                     router.asPath === `/products/category/${category.endpoint}`
                       ? 'text-green-500 '
                       : ''
-                  }`}
-                >
-                  <ListItemText primary={category.name} />
-                </Link>
-              ) : (
-                <Link
-                  title={category.name}
-                  href={'/products/'}
-                  className={`${
-                    router.asPath === `/products` ? 'text-green-500 ' : ''
-                  }`}
-                >
-                  <ListItemText primary={category.name} />
-                </Link>
-              )}
-            </ListItemButton>
-          </ListItem>
+                  }`
+            }
+          >
+            <ListItem
+              sx={{
+                textTransform: 'capitalize',
+                paddingTop: '0.7rem',
+                paddinBottm: '0.7rem',
+              }}
+              key={index}
+              disablePadding
+            >
+              <ListItemButton>
+                <ListItemText primary={category.name} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
