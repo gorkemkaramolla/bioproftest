@@ -65,7 +65,8 @@ const Car = () => {
   )[0];
   const recommended = products.filter(
     (p) =>
-      p.category.name === product.category.name && p.caption !== product.caption
+      p?.category.name === product?.category?.name &&
+      p?.caption !== product?.caption
   );
   const handleForward = () => {
     if (product?.id < products.length) {
@@ -84,8 +85,8 @@ const Car = () => {
       <BreadCrumb
         productName={product?.name}
         categoryName={{
-          name: product?.category.name,
-          endpoint: product?.category.endpoint,
+          name: product?.category?.name,
+          endpoint: product?.category?.endpoint,
         }}
       />
 
@@ -225,23 +226,25 @@ const Car = () => {
           )}
         </div>
       </div>
-      <div className='p-8'>
-        <div className='container mx-auto'>
-          <div className='text-3xl text-black font-bold mb-4 text-center'>
-            Hoşunuza gidebilir…
-          </div>
-          <div className='grid sm:grid-flow-col-dense grid-flow-row-dense gap-6 items-center sm:justify-start justify-center py-8'>
-            {recommended.map((product, index) => (
-              <Product
-                key={index}
-                caption={product.caption}
-                name={product.name}
-                url={product.url}
-              />
-            ))}
+      {recommended?.length > 0 && (
+        <div className='p-8'>
+          <div className='container mx-auto'>
+            <div className='text-3xl text-black font-bold mb-4 text-center'>
+              Hoşunuza gidebilir…
+            </div>
+            <div className='grid sm:grid-flow-col-dense grid-flow-row-dense gap-6 items-center sm:justify-start justify-center py-8'>
+              {recommended?.map((product, index) => (
+                <Product
+                  key={index}
+                  caption={product?.caption}
+                  name={product?.name}
+                  url={product?.url}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

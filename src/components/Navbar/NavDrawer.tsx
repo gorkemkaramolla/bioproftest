@@ -1,15 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { Button } from '@nextui-org/react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FiMenu } from 'react-icons/fi';
-
+import { IoClose } from 'react-icons/io5';
 import categorires from '@/util/categories';
 import Link from 'next/link';
+import { styled, useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
 
 import { useRouter } from 'next/router';
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -22,7 +23,15 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   });
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -39,11 +48,16 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: 250 }}
       role='presentation'
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          <IoClose />
+        </IconButton>
+      </DrawerHeader>
       <List>
         {categorires.map((category, index) => (
           <ListItem
@@ -105,3 +119,12 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+}));
