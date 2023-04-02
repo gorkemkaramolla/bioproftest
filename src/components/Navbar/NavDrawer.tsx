@@ -1,15 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { Button } from '@nextui-org/react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FiMenu } from 'react-icons/fi';
-
+import { IoClose } from 'react-icons/io5';
 import categorires from '@/util/categories';
 import Link from 'next/link';
+import { styled, useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
 
 import { useRouter } from 'next/router';
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -22,7 +23,15 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   });
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -39,48 +48,49 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: 250 }}
       role='presentation'
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          <IoClose />
+        </IconButton>
+      </DrawerHeader>
       <List>
         {categorires.map((category, index) => (
-          <ListItem
-            sx={{
-              textTransform: 'capitalize',
-              paddingTop: '0.7rem',
-              paddinBottm: '0.7rem',
-            }}
+          <Link
             key={index}
-            disablePadding
-          >
-            <ListItemButton>
-              {category.name !== 'Tüm Ürünler' ? (
-                <Link
-                  title={category.name}
-                  href={'/products/category/' + category.endpoint}
-                  className={`${
+            title={category.name}
+            href={
+              category.name === 'Tüm Ürünler'
+                ? '/products'
+                : '/products/category/' + category.endpoint
+            }
+            className={
+              category.name === 'Tüm Ürünler'
+                ? `${router.asPath === `/products` ? 'text-green-500' : ''}`
+                : `${
                     router.asPath === `/products/category/${category.endpoint}`
                       ? 'text-green-500 '
                       : ''
-                  }`}
-                >
-                  <ListItemText primary={category.name} />
-                </Link>
-              ) : (
-                <Link
-                  title={category.name}
-                  href={'/products/'}
-                  className={`${
-                    router.asPath === `/products` ? 'text-green-500 ' : ''
-                  }`}
-                >
-                  <ListItemText primary={category.name} />
-                </Link>
-              )}
-            </ListItemButton>
-          </ListItem>
+                  }`
+            }
+          >
+            <ListItem
+              sx={{
+                textTransform: 'capitalize',
+                paddingTop: '0.7rem',
+                paddinBottm: '0.7rem',
+              }}
+              disablePadding
+            >
+              <ListItemButton>
+                <ListItemText primary={category.name} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -91,7 +101,7 @@ export default function TemporaryDrawer() {
       <React.Fragment key={'left'}>
         <FiMenu
           onClick={toggleDrawer('left', true)}
-          className='w-[1.4rem] h-[1.4rem] ml-4'
+          className='w-[1.4rem] h-[1.4rem]'
         />
 
         <Drawer
@@ -105,3 +115,12 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+}));

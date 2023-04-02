@@ -3,16 +3,13 @@ import React from 'react';
 import { useSSR } from '@nextui-org/react';
 
 const Product = ({
-  id,
   name,
 
-  category,
   url,
   caption,
 }: {
-  id: number;
   name: string;
-  category: string;
+
   url: string;
   caption: string;
 }) => {

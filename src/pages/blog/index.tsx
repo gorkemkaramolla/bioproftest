@@ -6,12 +6,12 @@ import Link from 'next/link';
 const Blog = () => {
   return (
     <div>
-      <BreadCrumb regularCategoryName='Blog' />
+      <BreadCrumb regularCategoryName='blog' />
       <div className='container mx-auto'>
-        <div className='text-xl font-bold text-black ml-6 md: md:ml-12 xl:ml-16 mb-4'>
-          Blog
-        </div>
-        <div className='flex flex-col gap-6 items-center'>
+        <div className='flex flex-col gap-6 items-start mb-8 sm:mx-8 mx-4'>
+          <div className='text-xl font-bold text-black text-left  mb-4'>
+            Blog
+          </div>
           {blogs.map((blog, index) => (
             <div key={index} className='w-full'>
               <Link

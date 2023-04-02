@@ -13,8 +13,6 @@ const all = () => {
           <Product
             name={product.name}
             key={i}
-            id={product.id}
-            category={product.category.name}
             url={product.url}
             caption={product.caption}
           />

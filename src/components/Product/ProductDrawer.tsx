@@ -9,7 +9,9 @@ import { FiMenu } from 'react-icons/fi';
 import Button from '../Buttons/Button';
 import categorires from '@/util/categories';
 import Link from 'next/link';
-
+import { styled, useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import { IoClose } from 'react-icons/io5';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -22,7 +24,15 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   });
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -39,11 +49,16 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 350 }}
+      sx={{ width: 400 }}
       role='presentation'
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          <IoClose />
+        </IconButton>
+      </DrawerHeader>
       <div className='text-center mt-10 mb-2'>
         Satın almak istediğiniz mağazayı seçiniz
       </div>
@@ -114,3 +129,11 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-start',
+}));

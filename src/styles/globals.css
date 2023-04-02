@@ -1,10 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  font-family: 'Futura PT Demi', 'HelveticaNeue-Light', 'Helvetica Neue Light',
-    'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .mySwiper {
   min-height: 200px;
   align-items: center;
@@ -74,40 +81,64 @@
 .swiper-pagination-bullet {
   background-color: #027337 !important;
 }
-.next-ui-navbar-container {
-  max-width: 100%;
-}
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: #bcbaba;
-  height: 1px;
+
+/* mini-reset */
+
+/* HEADER with drop-shadow on scroll */
+header {
+  height: 80px; /* 64 + 16px */
+  position: sticky;
+  -webkit-position: sticky;
+  /* negative top allows for 16 pixels of movement before sticking */
+  top: -16px;
+  /* make sure header overlaps main*/
+  z-index: 50;
+
+  /* fix weird flickering issue in chrome: https://stackoverflow.com/a/22224884/286685 */
+  --webkit-backface-visibility: hidden;
 }
 
-/* Set the scrollbar thumb color and add shadow */
-::-webkit-scrollbar-thumb {
-  background-color: #0c0b0bd3;
-  border-radius: 10px;
-  max-height: 10px;
-  box-shadow: 0 2px 8px rgba(41, 24, 24, 0.2);
+/* PSEUDO ELEMENTS to create drop-shadow */
+header::before,
+header::after {
+  content: '';
+  display: block;
+  height: 16px;
+  /* make pseudo elements sticky as well */
+  position: sticky;
+  -webkit-position: sticky;
 }
 
-/* Set the height of the scrollbar track */
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-  height: 8px;
+/* SHADOW */
+header::before {
+  top: 48px; /* shadow is at bottom of element, so at 48 + 16 = 64px */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Hide the scrollbar arrows */
-::-webkit-scrollbar-button {
-  display: none;
-}
-::-moz-selection {
-  /* Code for Firefox */
-  color: red;
-  background: yellow;
+/* COVER */
+header::after {
+  /* linear gradient from background color to transparent acts as
+     a transition effect so the shadow appears gradually */
+  background: linear-gradient(
+    white 10%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 70%,
+    transparent
+  );
+  top: 0;
+  /* cover should fall over shadow */
+  z-index: 2;
 }
 
-::selection {
-  color: black;
-  background: rgba(230, 255, 7, 0.863);
+/* HEADER CONTENT */
+header > div {
+  height: 64px;
+
+  position: sticky;
+  -webkit-position: sticky;
+  top: 0px;
+  /* compensate for shadow with negative margin */
+  margin-top: -16px;
+  /* content should fall over shadow and cover */
+  z-index: 3;
 }
