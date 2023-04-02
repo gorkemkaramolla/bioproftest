@@ -8,12 +8,12 @@ const Navbar = () => {
   return (
     <header className=''>
       <div className='flex items-center backdrop-blur-md bg-white bg-opacity-[0.85] border-b '>
-        <div className='flex items-center justify-between container mx-auto px-6 '>
+        <div className='flex items-center justify-between container mx-auto px-4 sm:px-8'>
           {/* <div className='fixed top-0 z-50 backdrop-blur-sm bg-white bg-opacity-[0.85] border-b shadow-sm w-full'>
         <div
-          className=' flex py-2 px-4 space-x-4 justify-between lg:justify-between 
+        className=' flex py-2 px-4 space-x-4 justify-between lg:justify-between 
         items-center container mx-auto'
-        > */}
+      > */}
           <div className='inline-flex lg:hidden pt-2'>
             <NavDrawer />
           </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
             <Image
               width={100}
               height={40}
-              className=' m-1 md:pb-0 pb-0'
+              className=' m-1'
               src='/bioprof-logo.png'
               alt='logo'
             />

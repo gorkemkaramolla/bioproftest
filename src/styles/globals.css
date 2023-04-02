@@ -162,7 +162,6 @@ header::after {
 
 /* HEADER CONTENT */
 header > div {
-  background: orange;
   height: 64px;
 
   position: sticky;

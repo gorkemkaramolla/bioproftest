@@ -15,7 +15,7 @@ const BreadCrumb = (props: Props) => {
   return (
     <div className='bg-[rgb(252,252,252)] border-y mb-8 py-4 [&_li]:text-xs [&_li]:text-center'>
       <nav
-        className='flex container  conatiner mx-auto px-8 '
+        className='flex container  conatiner mx-auto sm:px-8 px-4 '
         aria-label='Breadcrumb'
       >
         <ol className='inline-flex items-center space-x-1 md:space-x-3 '>

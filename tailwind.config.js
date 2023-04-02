@@ -10,6 +10,20 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Lucida\\ Grande',
+        'Futura\\ PT\\ Demi',
+        'HelveticaNeue-Light',
+        'Helvetica\\ Neue\\ Light',
+        'Helvetica\\ Neue',
+        'Helvetica',
+        'Arial',
+        'Roboto',
+        'Nunito',
+        'sans-serif',
+      ],
+    },
     extend: {
       colors: {
         secondary: '#f5f5f5',
@@ -19,16 +33,6 @@ module.exports = {
         current: 'currentColor',
         primary: colors.gray,
         phospor: 'rgba(230, 255, 7, 0.863)',
-      },
-      backgroundColor: {
-        insta: {
-          background:
-            'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)',
-          '--webkit-background-cli': 'text',
-
-          'background-clip': 'text',
-          '--webkit-text-fill-color': 'transparent',
-        },
       },
     },
   },

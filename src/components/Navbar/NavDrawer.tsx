@@ -101,7 +101,7 @@ export default function TemporaryDrawer() {
       <React.Fragment key={'left'}>
         <FiMenu
           onClick={toggleDrawer('left', true)}
-          className='w-[1.4rem] h-[1.4rem] ml-4'
+          className='w-[1.4rem] h-[1.4rem]'
         />
 
         <Drawer

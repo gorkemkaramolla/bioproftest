@@ -8,7 +8,7 @@ const Blog = () => {
     <div>
       <BreadCrumb regularCategoryName='blog' />
       <div className='container mx-auto'>
-        <div className='flex flex-col gap-6 items-start mb-8 mx-8'>
+        <div className='flex flex-col gap-6 items-start mb-8 sm:mx-8 mx-4'>
           <div className='text-xl font-bold text-black text-left  mb-4'>
             Blog
           </div>

@@ -11,7 +11,7 @@ const About = (props: Props) => {
   });
   return (
     <animated.div style={animProps}>
-      <div className='mx-auto  px-12 container'>
+      <div className='mx-auto px-4 sm:px-8 container my-4 sm:my-8'>
         <h1 className='text-3xl text-center font-bold mb-8'>Hakkımızda</h1>
         <p className='mt-4 leading-7  '>
           Hakkımızda Sinoz Kozmetik olarak kurulduğumuz 2008 yılından bu yana
