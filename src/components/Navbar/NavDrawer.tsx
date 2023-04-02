@@ -61,6 +61,7 @@ export default function TemporaryDrawer() {
       <List>
         {categorires.map((category, index) => (
           <Link
+            key={index}
             title={category.name}
             href={
               category.name === 'Tüm Ürünler'
@@ -83,7 +84,6 @@ export default function TemporaryDrawer() {
                 paddingTop: '0.7rem',
                 paddinBottm: '0.7rem',
               }}
-              key={index}
               disablePadding
             >
               <ListItemButton>
