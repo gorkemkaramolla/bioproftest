@@ -6,28 +6,34 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <div
-      className='fixed top-0 flex py-2 px-4 space-x-4 justify-between lg:justify-around 
-    items-center border-b shadow-sm w-full z-50 backdrop-blur-sm bg-white bg-opacity-[0.85]'
-    >
-      <div className='inline-flex lg:hidden'>
-        <NavDrawer />
-      </div>
-      <Link href='/'>
-        <Image
-          width={100}
-          height={40}
-          className='lg:pb-3 m-1 md:pb-0 pb-0'
-          src='/bioprof-logo.png'
-          alt='logo'
-        />
-      </Link>
+    <header className=''>
+      <div className='flex items-center backdrop-blur-md bg-white bg-opacity-[0.85] border-b '>
+        <div className='flex items-center justify-between container mx-auto px-6 '>
+          {/* <div className='fixed top-0 z-50 backdrop-blur-sm bg-white bg-opacity-[0.85] border-b shadow-sm w-full'>
+        <div
+          className=' flex py-2 px-4 space-x-4 justify-between lg:justify-between 
+        items-center container mx-auto'
+        > */}
+          <div className='inline-flex lg:hidden pt-2'>
+            <NavDrawer />
+          </div>
+          <Link href='/'>
+            <Image
+              width={100}
+              height={40}
+              className=' m-1 md:pb-0 pb-0'
+              src='/bioprof-logo.png'
+              alt='logo'
+            />
+          </Link>
 
-      <div className='hidden lg:flex space-x-2 lg:space-x-4'>
-        <NavLink />
+          <div className='hidden lg:flex space-x-2 lg:space-x-4 pt-2'>
+            <NavLink />
+          </div>
+          <div className='h-10 w-10'></div>
+        </div>
       </div>
-      <div className='h-10 w-10'></div>
-    </div>
+    </header>
   );
 };
 

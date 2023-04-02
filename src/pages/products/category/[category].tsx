@@ -42,8 +42,6 @@ const Category = ({ productList }: CategoryProps) => {
               <Product
                 name={product.name}
                 key={i}
-                id={product.id}
-                category={product.category}
                 url={product.url}
                 caption={product.caption}
               />

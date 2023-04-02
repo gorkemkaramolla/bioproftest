@@ -11,11 +11,15 @@ const Blog = () => {
   )[0];
   return (
     <div>
-      <BreadCrumb regularCategoryName='Blog' />
-      <div className='container mx-auto space-y-4'>
+      <BreadCrumb regularCategoryName='blog' />
+      <div className='container mx-auto space-y-4 px-8 mb-8'>
         <div className='text-2xl font-bold text-black'>{blog?.title}</div>
         <div>
-          <img src={blog?.src} alt='' />
+          <img
+            src={blog?.src}
+            alt=''
+            className='w-full h-[25rem] lg:h-[40rem]'
+          />
         </div>
         <div className='text-gray-500 leading-relaxed'>{blog?.text}</div>
       </div>

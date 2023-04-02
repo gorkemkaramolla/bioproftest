@@ -7,6 +7,7 @@ import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
 import ProductDrawer from '@/components/Product/ProductDrawer';
 import { useSSR } from '@nextui-org/react';
+import Product from '@/components/Product/Product';
 const Zoom = ({ src }: { src: string }) => {
   const [zoom, setZoom] = React.useState({
     backgroundImage: `url(${src})`,
@@ -62,6 +63,10 @@ const Car = () => {
   const product = products.filter(
     (product) => product.name === String(slug)
   )[0];
+  const recommended = products.filter(
+    (p) =>
+      p.category.name === product.category.name && p.caption !== product.caption
+  );
   const handleForward = () => {
     if (product?.id < products.length) {
       const productID = product.id;
@@ -84,7 +89,7 @@ const Car = () => {
         }}
       />
 
-      <div className='mt-8 container mx-auto my-24'>
+      <div className='my-8 container mx-auto'>
         <div className='flex flex-col md:flex-row md:items-start items-center [&>div]:mx-8 '>
           <div className='md:w-1/2'>
             <Zoom src={product?.url} />
@@ -171,11 +176,11 @@ const Car = () => {
 
               <p className='py-2 text-red-700'>{product?.shortDescription}</p>
               <ProductDrawer />
-              <div className='flex text-sm mt-1'>
+              <div className='flex text-sm mt-4'>
                 <div className='pr-2'>Kategoriler:</div>
                 <Link
                   href='/'
-                  className='text-slate-400 hover:text-orange-500 transition-all	'
+                  className='text-green-600 hover:text-orange-500 transition-all	'
                 >
                   {product?.category.name}
                 </Link>
@@ -184,39 +189,58 @@ const Car = () => {
           </div>
         </div>
       </div>
-      <div className='text-center mx-auto w-fit flex flex-col gap-2 pt-4'>
+      <div className='text-start md:text-center conatiner mx-auto md:w-fit flex flex-col gap-2 pt-4 p-8'>
         <div className='font-semibold'>Açıklama</div>
-        <hr className='border border-black' />
+        <hr className='hidden md:block border border-black' />
       </div>
-      <div className='p-8 m-8 border container mx-auto'>
-        {isBrowser && (
-          <Collapse.Group>
-            <Collapse
-              className='text-md font-bold'
-              title={product?.description?.at(0)?.title}
-              expanded
-            >
-              <Text className='text-md font-normal p-8'>
-                {product?.description?.at(0)?.text}
-              </Text>
-            </Collapse>
-            {product?.description.map((des, index) => {
-              if (index > 0)
-                return (
-                  <Collapse
-                    key={index}
-                    title={des.title}
-                    className='text-md font-bold'
-                  >
-                    <Text className='text-md font-normal py-1 px-8'>
-                      {des.text}
-                    </Text>
-                  </Collapse>
-                );
-              else return;
-            })}
-          </Collapse.Group>
-        )}
+      <div className='m-8'>
+        <div className='p-8 m-8 border container mx-auto'>
+          {isBrowser && (
+            <Collapse.Group>
+              <Collapse
+                className='text-md font-bold'
+                title={product?.description?.at(0)?.title}
+                expanded
+              >
+                <Text className='text-md font-normal p-8'>
+                  {product?.description?.at(0)?.text}
+                </Text>
+              </Collapse>
+              {product?.description.map((des, index) => {
+                if (index > 0)
+                  return (
+                    <Collapse
+                      key={index}
+                      title={des.title}
+                      className='text-md font-bold'
+                    >
+                      <Text className='text-md font-normal py-1 px-8'>
+                        {des.text}
+                      </Text>
+                    </Collapse>
+                  );
+                else return;
+              })}
+            </Collapse.Group>
+          )}
+        </div>
+      </div>
+      <div className='p-8'>
+        <div className='container mx-auto'>
+          <div className='text-3xl text-black font-bold mb-4 text-center'>
+            Hoşunuza gidebilir…
+          </div>
+          <div className='grid sm:grid-flow-col-dense grid-flow-row-dense gap-6 items-center sm:justify-start justify-center py-8'>
+            {recommended.map((product, index) => (
+              <Product
+                key={index}
+                caption={product.caption}
+                name={product.name}
+                url={product.url}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

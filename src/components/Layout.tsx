@@ -7,9 +7,7 @@ export default function Layout({ children }: { children: ReactElement }) {
     <>
       <HeadComponent />
       <Navbar />
-      <main className='h-full min-h-[300px] mt-[4rem] lg:mt-[4.75rem]'>
-        {children}
-      </main>
+      <main className='min-h-[300px]'>{children}</main>
       <Footer />
     </>
   );

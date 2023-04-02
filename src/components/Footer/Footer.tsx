@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <div className='px-5 bg-[rgb(244,244,244)] w-full flex items-center justify-center'>
       <div>
-        <footer className='mt-4 container mx-auto '>
-          <div className='flex mx-auto  flex-col lg:flex-row gap-8 md:gap-16 lg:gap-32 justify-center items-center bg-[rgb(244,244,244)] px-8 py-16'>
+        <footer className='mt-4 container mx-auto px-8'>
+          <div className='flex mx-auto  flex-col lg:flex-row gap-8 md:gap-16 lg:gap-32 justify-center items-center px-8 py-16'>
             <div className=' flex flex-col gap-4 items-center  text-center lg:text-start lg:items-start '>
               <Image
                 className='my-4'
