@@ -13,8 +13,10 @@ const About = (props: Props) => {
     <animated.div style={animProps}>
       <div className='mx-auto px-4 sm:px-8 container my-4 sm:my-8'>
         <h1 className='text-3xl text-center font-bold mb-8'>Hakkımızda</h1>
-        {hakkimizda.map((paragraph) => (
-          <p className='mt-4 leading-7  '>{paragraph}</p>
+        {hakkimizda.map((paragraph, index) => (
+          <p key={index} className='mt-4 leading-7  '>
+            {paragraph}
+          </p>
         ))}
       </div>
     </animated.div>
