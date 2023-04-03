@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Button } from '@nextui-org/react';
-import categorires from '@/util/categories';
+import categorires from '@/util/ürünler/categories';
 import { useRouter } from 'next/router';
 import { firstCharacterUpper } from '@/util/utilfunctions';
 const NavLink = () => {

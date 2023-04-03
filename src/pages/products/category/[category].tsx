@@ -2,9 +2,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
-import products, { ProductType } from '@/util/products';
+import products, { ProductType } from '@/util/ürünler/products';
 import Product from '@/components/Product/Product';
-import categorires from '@/util/categories';
+import categorires from '@/util/ürünler/categories';
 
 type CategoryProps = {
   productList: ProductType[];

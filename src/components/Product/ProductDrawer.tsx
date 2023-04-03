@@ -7,7 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FiMenu } from 'react-icons/fi';
 import Button from '../Buttons/Button';
-import categorires from '@/util/categories';
+import categorires from '@/util/ürünler/categories';
 import Link from 'next/link';
 import { styled, useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';

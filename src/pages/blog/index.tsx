@@ -1,5 +1,5 @@
 import React from 'react';
-import blogs from '@/util/blogs';
+import blogs from '@/util/blog/blogs';
 import BlogCard from '@/components/Blog';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
 import Link from 'next/link';

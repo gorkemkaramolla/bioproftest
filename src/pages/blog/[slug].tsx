@@ -1,5 +1,5 @@
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
-import blogs from '@/util/blogs';
+import blogs from '@/util/blog/blogs';
 import { useRouter } from 'next/router';
 import React from 'react';
 

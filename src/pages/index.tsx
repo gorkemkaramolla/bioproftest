@@ -2,8 +2,14 @@ import { Inter } from 'next/font/google';
 import styles from '../styles/Home.module.css';
 import { register } from 'swiper/element/bundle';
 const inter = Inter({ subsets: ['latin'] });
-
-import products from '@/util/products';
+import {
+  ikinciSiradanBanner,
+  ilkSiradanBanner,
+  ilkVideo,
+  kareFotograflar,
+} from '@/util/anasayfa/anasayfa';
+import { ikinciVideo } from '@/util/anasayfa/anasayfa';
+import products from '@/util/ürünler/products';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -63,17 +69,17 @@ export default function Home() {
         </div> */}
         </div>
         <div className='container   w-screen px-5 py-2   '>
-          <Video />
+          <Video videoSrc={ilkVideo} />
         </div>
         <div className='px-5 py-2 container w-screen row-span-1 grid grid-cols-12'>
           <Banner
             url={'/products/Oil%20Yo%C4%9Fun%20Bak%C4%B1m%20Ya%C4%9F%C4%B1'}
-            imgSrc='desktop-mucize-banner.jpg'
+            imgSrc={ilkSiradanBanner}
           />
         </div>
 
         <div className='container grid w-screen  px-3 pt-2 row-span-1 grid-cols-12 '>
-          {datasquares.map((square, idx) => (
+          {kareFotograflar.map((square, idx) => (
             <div
               className='col-span-6 xl:col-span-3 lg:col-span-3 md:col-span-3  sm:col-span-6 gap-5 mb-5'
               key={idx}
@@ -85,7 +91,7 @@ export default function Home() {
         <div className=' container justify-center  w-screen   px-5   grid grid-cols-12'>
           <Banner
             url={'/products/y%C3%BCz-temizleme-jeli'}
-            imgSrc='desktop-serumlar-banner.jpeg'
+            imgSrc={ikinciSiradanBanner}
           />
         </div>
         <div className=' container justify-center  w-screen  py-2 px-5   grid grid-cols-12'>
@@ -93,13 +99,13 @@ export default function Home() {
         </div>
 
         <div className='container px-5  py-2 w-screen '>
-          <Video />
+          <Video videoSrc={ikinciVideo} />
         </div>
-        <div className='flex w-screen px-5 py-2 container'>
+        {/* <div className='flex w-screen px-5 py-2 container'>
           {products.map((product) => (
             <SocialMediaSquare key={product.id} imgSrc={product.url} />
           ))}
-        </div>
+        </div> */}
       </main>
     </div>
   );

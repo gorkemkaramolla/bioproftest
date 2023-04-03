@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import styles from './BannerSwiper.module.css';
+import { ilkBanner } from '@/util/anasayfa/anasayfa';
 import 'swiper/css';
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/css/pagination';
@@ -29,33 +29,14 @@ const BannerSwiper = (props: Props) => {
       modules={[Navigation, Pagination]}
       className='mySwiper w-screen mb-4'
     >
-      <SwiperSlide className=''>
-        <Link href='#'>
-          <img
-            className='w-screen object-cover'
-            src='head-banner/glow-des.jpg'
-            alt='Image 1'
-          />
-        </Link>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Link href='/'>
-          <img
-            className='w-screen'
-            src='head-banner/gunes-kremleri-desktop-slider-2.jpg'
-            alt='Image 1'
-          />
-        </Link>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Link href='/'>
-          <img
-            className='w-screen'
-            src='head-banner/pink-touch-slider-desktop.jpg'
-            alt='Image 1'
-          />
-        </Link>
-      </SwiperSlide>
+      {ilkBanner.map((banner) => (
+        <SwiperSlide className=''>
+          <Link href='#'>
+            <img className='w-screen object-cover' src={banner} alt='Image 1' />
+          </Link>
+        </SwiperSlide>
+      ))}
+
       <div className='absolute bottom-0 left-0 w-full flex justify-center'>
         <div className='swiper-pagination'></div>
       </div>

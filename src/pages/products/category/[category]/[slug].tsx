@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import products from '@/util/products';
+import products from '@/util/ürünler/products';
 import { Collapse, Text, Tooltip } from '@nextui-org/react';
 import Link from 'next/link';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';

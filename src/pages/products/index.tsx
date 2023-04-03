@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar';
 import React from 'react';
 import Product from '../../components/Product/Product';
 import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
-import products from '@/util/products';
+import products from '@/util/ürünler/products';
 
 const all = () => {
   return (

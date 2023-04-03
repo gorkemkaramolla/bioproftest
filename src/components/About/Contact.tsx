@@ -4,6 +4,7 @@ import MailLink from '@/components/MailLink/MailLink';
 import Image from 'next/image';
 import { useSpring, animated } from '@react-spring/web';
 import MessageForm from '../Form';
+import { iletisim } from '@/util/iletisim/iletisim';
 type Props = {};
 
 const Contact = (props: Props) => {
@@ -22,15 +23,12 @@ const Contact = (props: Props) => {
           <MessageForm />
           <div className='text-start text-black'>
             <div className='space-y-4'>
-              <h1 className='text-2xl font-bold'>Bizimle İletişime Geç</h1>
-              <h2 className='text-xl'>Bioprof Kozmetik</h2>
+              <h1 className='text-2xl font-bold'>{iletisim.baslik}</h1>
+              <h2 className='text-xl'>{iletisim.markaIsmi}</h2>
 
               <hr className='border-black mx-auto' />
               <p className='text-xs font-bold'>ADRES</p>
-              <p className='text-sm text-gray-500 '>
-                Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 |
-                Sarıyer/İstanbul
-              </p>
+              <p className='text-sm text-gray-500 '>{iletisim.adres}</p>
               <p className='text-xs font-bold pb-4'>EMAİL</p>
               <MailLink />
             </div>

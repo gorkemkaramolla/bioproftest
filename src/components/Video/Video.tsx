@@ -1,6 +1,8 @@
-type Props = {};
+type Props = {
+  videoSrc: string;
+};
 
-const Video: React.FC<Props> = () => {
+const Video: React.FC<Props> = ({ videoSrc }) => {
   return (
     <div className=' flex items-center justify-center '>
       <video
@@ -8,7 +10,7 @@ const Video: React.FC<Props> = () => {
         poster='/bioprof-poster.png'
         controls
       >
-        <source src='pişik kremi video.mp4' type='video/mp4' />
+        <source src={videoSrc} type='video/mp4' />
         Your browser does not support the video tag.
       </video>
     </div>

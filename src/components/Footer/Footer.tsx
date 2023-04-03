@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SocialMediaIcons from './SocialMediaIcons';
 import MailLink from '../MailLink/MailLink';
+import { footerData } from '@/util/footer/footer';
 const Footer = () => {
   return (
     <div className='px-5 bg-[rgb(244,244,244)] w-full flex items-center justify-center'>
@@ -14,14 +15,12 @@ const Footer = () => {
                 className='my-4'
                 width={250}
                 height={100}
-                src='/bioprof-logo.png'
+                src={footerData.logo}
                 alt='logo'
               />
 
               <div className='overflow-clip self-center'>
-                Sinoz cilt bakım ürünlerimizi; doğanın zengin özleri ve
-                teknoloji ile birleştirerek, farklı cilt tiplerinin
-                ihtiyaçlarına uygun olarak üretip, müşterilerimize sunmaktayız.
+                {footerData.slogan}
               </div>
               <SocialMediaIcons />
             </div>
@@ -31,8 +30,7 @@ const Footer = () => {
                 href='/contact'
                 className='hover:underline hover:text-gray-w'
               >
-                Vadi İstanbul Ayazağa Mah. Azerbaycan Cad. 2B Ofis Kat:8 |
-                Sarıyer/ İstanbul
+                {footerData.adres}
               </Link>
               <MailLink />
               <Link
