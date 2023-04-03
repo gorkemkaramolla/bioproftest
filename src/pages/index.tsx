@@ -15,7 +15,6 @@ import products from '@/util/ürünler/products';
 import 'swiper/css';
 import Swipercomp from '@/components/Swipercomp';
 import BannerSwiper from '@/components/HeadBanner/BannerSwiper';
-import { datasquares } from '@/util/squareboardsdata';
 import SquareBoard from '@/components/squareboards/SquareBoard';
 import Banner from '@/components/regular-banner/Banner';
 import Video from '@/components/Video/Video';
