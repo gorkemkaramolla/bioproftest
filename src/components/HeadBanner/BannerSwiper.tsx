@@ -29,8 +29,8 @@ const BannerSwiper = (props: Props) => {
       modules={[Navigation, Pagination]}
       className='mySwiper w-screen mb-4'
     >
-      {ilkBanner.map((banner) => (
-        <SwiperSlide className=''>
+      {ilkBanner.map((banner, index) => (
+        <SwiperSlide className='' key={index}>
           <Link href='#'>
             <img className='w-screen object-cover' src={banner} alt='Image 1' />
           </Link>
