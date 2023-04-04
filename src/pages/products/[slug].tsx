@@ -30,12 +30,12 @@ const Zoom = ({ src }: { src: string }) => {
 
   return (
     <figure
-      className='group bg-no-repeat border'
+      className='group bg-no-repeat border  '
       onMouseMove={(e) => handleMouseMove(e)}
       style={zoom}
     >
       <img
-        className='group-hover:opacity-0 pointer-events-none block w-full'
+        className='group-hover:opacity-0 pointer-events-none block w-full '
         src={src}
       />
     </figure>
@@ -176,11 +176,11 @@ const Car = () => {
               <hr className='mt-4 mb-6 border-gray-300' />
 
               <p className='py-2 text-red-700'>{product?.shortDescription}</p>
-              <ProductDrawer />
+              <ProductDrawer linkler={product?.linkler} />
               <div className='flex text-sm mt-4'>
                 <div className='pr-2'>Kategoriler:</div>
                 <Link
-                  href='/'
+                  href={`/products/${product?.category.endpoint}`}
                   className='text-green-600 hover:text-orange-500 transition-all	'
                 >
                   {product?.category.name}
@@ -190,7 +190,7 @@ const Car = () => {
           </div>
         </div>
       </div>
-      <div className='text-start md:text-center conatiner mx-auto md:w-fit flex flex-col gap-2 pt-4 p-8'>
+      <div className='text-start md:text-center container mx-auto md:w-fit flex flex-col gap-2 pt-4 p-8'>
         <div className='font-semibold'>Açıklama</div>
         <hr className='hidden md:block border border-black' />
       </div>

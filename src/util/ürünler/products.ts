@@ -1,9 +1,16 @@
 import categorires from './categories';
 const products = [
   {
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     id: 1,
     name: 'yüz-temizleme-jeli',
-    category: categorires[0],
+
+    category: categorires[1],
     shortDescription:
       'Salisilik Asit, Zinc PCA ve Çay Ağacı özüyle zenginleştirilmiş formülü cildi fazla yağdan arındırır, pürüzsüz, temiz ve mat bir görünüm sağlar. 400 ml',
     url: 'https://www.sinoz.com.tr/wp-content/uploads/2023/02/yuz-temizleme-jeli-yeni-ambalaj.jpg',
@@ -57,49 +64,55 @@ const products = [
   },
   {
     id: 2,
-    name: 'koruyucu-süt',
-    category: categorires[4],
-    shortDescription:
-      'Güneşin zararlı ışınlarına karşı ultra yüksek koruma sağlar ve nemlendirici hassas bakım yapar. 200ml',
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '#',
+      bim: '#',
+    },
+    name: 'pisik-önleyici-krem',
+    category: categorires[0],
+    shortDescription: 'Bioprof Bitkisel İçerikli Pişik Önleyici Krem',
 
-    url: 'https://www.sinoz.com.tr/wp-content/uploads/2022/02/koruyucu-sut.jpg',
+    url: '/pisik-kremi.webp',
 
-    caption:
-      'Sinoz Ultra Yüksek Koruyucu & Nemlendirici Sprey Güneş Kremi SPF50+',
+    caption: 'Bioprof Bitkisel İçerikli Pişik Önleyici Krem',
     description: [
       {
-        title:
-          'SİNOZ ULTRA YÜKSEK KORUYUCU&NEMLENDİRİCİ SPREY GÜNEŞ KREMİ  SPF+50',
-        text: `Sinoz Ultra Yüksek Koruyucu&Nemlendirici Sprey Güneş Kremi SPF50+, UVA / UVB yoğun güneş ışınlarına ve kuruluğa karşı ultra koruyucu özelliğe sahiptir.
-
-    İçeriğindeki Pantenol ve E Vitamini ile cildin nem dengesini korur, cilt üzerinde koruyucu bir bariyer oluşturur.
-    
-    Hafif ve yağlılık hissi bırakmayan yapısıyla cilt tarafından kolayca emilir. Suya dayanıklıdır.`,
+        title: 'BIOPROF BİTKİSEL İÇERİKLİ PİŞİK ÖNLEYİCİ KREM',
+        text: `
+        Yara ve çatlakların iyileşmesine etkili olduğu bilimsel olarak kanıtlanmış olan çinko oksit içermektedir.
+        Pişik, isilik ve güneş yanığını hızlı şekilde iyileştirir. Yara izi oluşumunu minimalize ederek yumuşacık şekilde yara iyileşmesi sağlar.        
+        `,
       },
       {
         title: 'İçindekiler ve Etkileri',
-        text: `SPF 50+ : Çok güçlü UVA-UVB maruziyetine karşı ultra yüksek koruma sağlar.
-
-  E-Vitamini: Cildin iç ve dış katmanını besleyerek daha canlı olmasına destek olur. Nemlendirir, kuruluktan oluşabilecek yaşlanma etkilerini azaltır. Ciltteki UV hasarını azaltmada faydalıdır.
-  
-  Pantenol: B-5 vitamini olarak da bilinir. Derideki tahrişi önler ve nemi ciltte depolamaya yardım eder.`,
+        text: `
+        Diğer kremler granulasyonu artırırken, bioprof bitkisel kremimiz kollojen sentezini arttırır.
+        El ayak çatlaklarını hızlı ve etkili şekilde giderir, içeriğindeki yoğun bitkisel yağlar ile güçlü nemlendirici etki gösterir. `,
       },
       {
         title: 'Kullanım',
-        text: 'Güneşe çıkmadan önce tüm vücudunuza yeterli miktarda uygulayınız. Terledikten, yüzdükten veya havluyla kurulandıktan sonra uygulama işlemini tekrarlayınız. Güneş ürünlerinin cilde nüfuz etmesi için uygulama güneşe çıkmadan 15-30 dk önce yapılmalıdır. Güneşte uzun süre kalındığı takdirde ürünlerin 2 saatte bir yenilenmesi gerekir.',
+        text: `
+        Ayak kokusu oluşumunu engeller ve pudra kokusu ile ayakların güzel kokmasını sağlar.
+        Bacak arası ve meme altı pişiklerini yok eder, yatan hasta pişik ve dekübit yaralarına hızlı etkilidir.`,
       },
       {
         title: 'Uyarılar',
-        text: 'Haricen kullanım içindir. Göz çevresine uygulamayınız. Ürünün göz ile temasından kaçınınız ve göze temas durumunda bol su ile yıkayınız. Güneş koruyucu ürün kullanmış olsanız dahi cildinizi doğrudan güneş ışınlarına maruz bırakmayınız ve güneşte çok uzun süre kalmayınız. Uygulanması gerekli miktarı azaltmak koruma düzeyini önemli ölçüde azaltacaktır. Güneşin yoğun olduğu öğle saatlerinde (11.00-16.00 saatleri arasında) güneşe çıkmamaya özen gösteriniz. Ürün bebek ve çocuklar için uygun değildir. Güneş yanıkları özellikle çocuklar için tehlikelidir. Bebek ve çocukları direkt güneş ışığından uzak tutunuz ve uygun giysiler ile koruyunuz. Ürününüzü direkt güneş ışığına maruz bırakmayınız, aşırı sıcaktan koruyunuz. Çocukların ulaşamayacağı bir yerde, ağzı sıkıca kapalı olarak, 25 C’nin altında oda sıcaklığında saklayınız.',
-      },
-      {
-        title: 'İçindekiler',
-        text: 'Aqua, Octocrylene, C12-15 Alkyl Benzoate, Ethylhexyl Triazone, Ethylhexyl Salicylate, Butyl Methoxydibenzoylmethane, Titanium Dioxide, Coco-Caprylate/Caprate, Glycerin, Polysorbate 20, Potassium Cetyl Phosphate, Zinc Oxide, Dimethicone, Ceteareth-25, Acrylates Copolymer, Phenoxyethanol, Glyceryl Stearate, Propylene Glycol, Cetearyl Alcohol, Aloe Barbadensis Leaf  Extract, Parfum, Ceteareth-20, Xanthan Gum, Tocopheryl Acetate, Panthenol, Ceteareth-12, Cetyl Palmitate, Ethylhexylglycerin, Citric Acid, Tetrasodium EDTA, Benzoic Acid, Dehydroacetic Acid, Sodium Hydroxide.',
+        text: `
+        Bez dermatiti ve yetişkin yoğun bakım hasta bez pişiğinde de hızla sonuç verir.
+        Doğal nemlendirici ve yaralar için sıkça kullanıldığı bilinen, içeriğindeki zeytinyağı, çörek otu, hindistan cevizi, badem ve defne yaprağı bitkisel yağları sayesinde, diğer ürünlere göre daha hızlı ve etkili bir sonuç gösterir.`,
       },
     ],
   },
   {
     id: 3,
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     name: 'bronzlastirici-yag',
     category: categorires[3],
 
@@ -147,8 +160,14 @@ const products = [
   },
   {
     id: 4,
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     name: 'bronzluk-jeli',
-    category: categorires[4],
+    category: categorires[2],
     shortDescription:
       'Hafif renkli jel formülü ile uzun süren ideal ve parlak bronzluk. 200ml',
     url: 'https://www.sinoz.com.tr/wp-content/uploads/2022/02/bronzluk-jeli.jpg',
@@ -191,6 +210,12 @@ const products = [
 
   {
     id: 5,
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     name: 'Oil Yoğun Bakım Yağı',
     category: categorires[3],
     shortDescription:
@@ -256,6 +281,12 @@ const products = [
   },
   {
     id: 6,
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     name: 'Sinoz Vücut Peelingi',
     category: categorires[3],
     shortDescription:
@@ -290,6 +321,12 @@ const products = [
   },
   {
     id: 7,
+    linkler: {
+      trendyol:
+        'https://www.trendyol.com/bioprof/bitkisel-icerikli-pisik-onleyici-krem-75-ml-p-673693858?merchantId=788043&filterOverPriceListings=false',
+      hepsiburada: '',
+      bim: '',
+    },
     name: 'Leke Kremi',
     category: categorires[4],
     shortDescription:

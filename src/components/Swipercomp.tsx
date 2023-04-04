@@ -48,7 +48,11 @@ const Swipercomp = (props: Props) => {
               href={'/products/' + product.name}
               className='flex flex-col items-center justify-center'
             >
-              <img className='w-36 sm:w-48' src={product.url} alt='Image 1' />
+              <img
+                className='w-36 sm:w-48 h-36 sm:h-48 object-contain'
+                src={product.url}
+                alt='Image 1'
+              />
               <hr className='border border-green-600 w-full rounded-xl my-2 transition-colors duration-200' />
               <p className='text-sm group-hover:text-green-400  flex justify-start text-left w-full transition-colors duration-200'>
                 {product.caption.length > 55

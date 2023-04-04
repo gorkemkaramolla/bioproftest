@@ -15,8 +15,17 @@ import { IoClose } from 'react-icons/io5';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
+import products from '@/util/ürünler/products';
+// import type { ProductType } from '@/util/ürünler/products';
+interface Props {
+  linkler: {
+    trendyol: string;
+    hepsiburada: string;
+    bim: string;
+  };
+}
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props: Props) {
   const router = useRouter();
   const [state, setState] = React.useState({
     top: false,
@@ -75,7 +84,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button url='https://trendyol.com' name='Satın Al'></Button>
+            <Button url={props?.linkler?.trendyol} name='Satın Al'></Button>
           </div>
           <div className='flex flex-col items-center'>
             <div>
@@ -87,7 +96,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button url='https://www.hepsiburada.com/' name='Satın Al'></Button>
+            <Button url={props?.linkler?.hepsiburada} name='Satın Al'></Button>
           </div>
         </div>
         <div className='divide-x flex p-4'>
@@ -101,7 +110,7 @@ export default function TemporaryDrawer() {
                 alt=''
               />
             </div>
-            <Button url='https://www.watsons.com/' name={'Satın Al'}></Button>
+            <Button url={props?.linkler?.bim} name={'Satın Al'}></Button>
           </div>
         </div>
       </div>

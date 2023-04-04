@@ -23,7 +23,11 @@ const Product = ({
               <div
                 className={`justify-center items-start flex h-[15rem] bg-cover`}
               >
-                <img src={url} alt='' className='w-[15rem] h-[15rem]' />
+                <img
+                  src={url}
+                  alt=''
+                  className='w-[15rem] h-[15rem] object-contain'
+                />
               </div>
               <hr className=' border-green-600 group-hover:border-green-400 w-full rounded-xl my-4' />
               <div className='text-left text-sm transition-colors group-hover:text-green-400 '>
